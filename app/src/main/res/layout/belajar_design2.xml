@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/rviewstat"
+            android:layout_width="wrap_content"
+            android:text="Review Stats"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            app:borderWidth="0dp"
+            android:layout_marginEnd="6dp"
+            android:backgroundTint="@color/material_on_primary_emphasis_high_type"
+            android:src="@drawable/menu"
+            app:elevation="8dp"
+            app:fabSize="mini"
+            app:tint="@color/material_on_background_emphasis_high_type" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="55dp">
+        <com.google.android.material.chip.Chip
+            android:layout_width="130dp"
+            android:text="Last 7 Days"
+            app:chipStrokeWidth="1dp"
+            app:chipIcon="@drawable/ic_round_calendar_today_24"
+            android:textSize="15sp"
+            android:layout_marginStart="6dp"
+            app:chipBackgroundColor="@color/material_on_primary_emphasis_high_type"
+            android:layout_marginTop="2dp"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.chip.Chip
+            android:layout_width="180dp"
+            android:text="Bakul Dawet App"
+            android:textSize="17sp"
+            app:chipIcon="@drawable/menu"
+            app:chipBackgroundColor="@color/material_on_primary_emphasis_high_type"
+            app:chipStrokeWidth="1dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="2dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:background="?colorDivider"
+        android:layout_margin="10dp"
+        android:layout_height="55dp">
+
+        <TextView
+            android:id="@+id/yperform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="Your review Performance is"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_toRightOf="@+id/yperform"
+            android:id="@+id/Performance"
+            android:textColor="?primary_green"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="3dp"
+            android:layout_width="wrap_content"
+            android:text="Good"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="-9dp"
+        android:layout_height="200dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="👍 Good Review"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:text="500"
+                android:gravity="center"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:layout_marginTop="5dp"
+                android:textSize="50dp"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="40%"
+                    android:id="@+id/percent"
+                    android:drawableTint="?primary_green"
+                    android:textColor="?primary_green"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    app:drawableStartCompat="@drawable/ic_baseline_arrow_upward_24" />
+                <TextView
+                    android:layout_toEndOf="@id/percent"
+                    android:id="@+id/tulisan"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:text="From last"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_toEndOf="@+id/tulisan"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:text="7days"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:background="?colorDivider"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="👎 Bad Review"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="4"
+                android:gravity="center"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:layout_marginTop="5dp"
+                android:textSize="50dp"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/percent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0%"
+                    android:textColor="#FF0000"
+                    android:textSize="18sp"
+                    app:drawableStartCompat="@drawable/ic_baseline_arrow_upward_24"
+                    app:drawableTint="#FF0000" />
+                <TextView
+                    android:layout_toEndOf="@id/percent2"
+                    android:id="@+id/tulisan2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:text="From last"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_toEndOf="@+id/tulisan2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:text="7days"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:layout_width="match_parent"
+            android:text="Performance"
+            android:textSize="28sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/material_on_background_emphasis_medium"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="1 January, 7 January"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_baseline_align_vertical_bottom_24"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

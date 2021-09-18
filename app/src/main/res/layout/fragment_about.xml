@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="?colorDivider"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_margin="14dp"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp"
+            app:cardBackgroundColor="@color/material_on_primary_emphasis_high_type"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_margin="14dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="Qoranku"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textColor="@color/material_on_surface_emphasis_medium"
+                            android:layout_marginStart="10dp"
+                            android:textSize="18sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:text="Raka M.A"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_baseline_info_24"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="Version"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textColor="@color/material_on_surface_emphasis_medium"
+                            android:layout_marginStart="10dp"
+                            android:textSize="18sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:text="1.0"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_baseline_refresh_24"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="Changelog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_baseline_book_24"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        app:tint="@color/material_on_surface_emphasis_medium"
+                        android:layout_height="70dp"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="License"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="14dp"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp"
+            app:cardBackgroundColor="@color/material_on_primary_emphasis_high_type"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_margin="14dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_baseline_account_circle_24"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="Author"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textColor="@color/material_on_surface_emphasis_medium"
+                            android:layout_marginStart="10dp"
+                            android:textSize="18sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:text="Raka M.A"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/github"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"
+                        app:tint="@color/material_on_background_emphasis_medium" />
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="GitHub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textColor="@color/material_on_surface_emphasis_medium"
+                            android:layout_marginStart="10dp"
+                            android:textSize="18sp"
+                            android:layout_marginTop="2dp"
+                            android:layout_width="match_parent"
+                            android:text="RMA-17"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/material_on_primary_emphasis_high_type"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_margin="14dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_baseline_mail_24"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"/>
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="rakamuhammadalhafidz12312@gmail.com"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/ic_instagram"
+                        android:layout_width="70dp"
+                        android:padding="9dp"
+                        android:layout_height="70dp"
+                        app:tint="@color/material_on_background_emphasis_medium" />
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@color/material_on_surface_emphasis_high_type"
+                            android:text="\@raka_m.a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+</ScrollView>

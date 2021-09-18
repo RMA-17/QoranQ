@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.rmaproject.myqoran.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_read_quran"
+            app:destination="@id/nav_read_quran" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_give_rating"
+        android:name="com.rmaproject.myqoran.ui.rating.RatingFragment"
+        android:label="@string/menu_rating"
+        tools:layout="@layout/fragment_rate" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.rmaproject.myqoran.ui.aboutus.AboutUsFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_read_quran"
+        android:name="com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranRead"
+        android:label="Quran Read"
+        tools:layout="@layout/fragment_read_quran"
+        />
+</navigation>

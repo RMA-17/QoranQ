@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:id="@+id/starCenter"
+            android:layout_width="60dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_star_24"
+            android:layout_height="60dp"
+            app:tint="?primary_green" />
+
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/starCenter"
+            android:layout_width="60dp"
+            android:src="@drawable/ic_baseline_star_24"
+            android:layout_height="60dp"
+            app:tint="?primary_green" />
+
+        <ImageView
+            android:id="@+id/stickman"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/stickman" />
+
+        <ImageView
+            android:layout_width="56dp"
+            android:padding="10dp"
+            android:layout_margin="6dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_close_24" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/stickman"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Excellent!"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+            <RatingBar
+                android:progressTint="?primary_green"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Thanks for Loving Us!"
+                android:gravity="center"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="28sp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Spread to World by rating us on PlayStore!"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                android:textSize="20sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="120dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                app:cornerRadius="50dp"
+                android:layout_marginTop="30dp"
+                android:text="Rate Us"
+                android:backgroundTint="?primary_green"
+                android:layout_gravity="center"
+                android:layout_height="65dp"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

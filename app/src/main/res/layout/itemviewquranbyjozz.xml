@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/clickableLayout"
+    android:background="?selectableItemBackground"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/frameNumber"
+                android:layout_width="200dp"
+                android:layout_margin="4dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ayah_frame"
+                android:layout_height="60dp"
+                app:tint="?colorPrimary" />
+
+            <TextView
+                android:id="@+id/jozzcounter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/frameNumber"
+                android:layout_alignTop="@+id/frameNumber"
+                android:layout_alignEnd="@+id/frameNumber"
+                android:layout_alignBottom="@+id/frameNumber"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginStart="8dp"
+                android:id="@+id/nama_Juz"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:text="Juz 1"
+                android:textColor="?colorPrimary"
+                android:textSize="20sp"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/surahNameEN"
+                android:textColor="@color/material_on_background_emphasis_medium"
+                android:text="Surat Al-Fatihah"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/aya_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/utsmanichafs"
+                android:gravity="center_vertical"
+                android:maxLength="40"
+                android:text="الفاتحة"
+                android:textColor="?colorPrimary"
+                android:textSize="25dp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center"
+        app:dividerThickness="1dp"
+        android:layout_height="1dp"/>
+
+
+</LinearLayout>

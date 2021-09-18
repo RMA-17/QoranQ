@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CardView"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/material_on_surface_stroke"
+        android:elevation="10dp"
+        android:backgroundTint="?colorPrimary"
+        android:layout_height="260dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/namaSurat"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:text="Al-Fatihah"
+                android:layout_gravity="center"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textSize="35sp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/artiSurat"
+                android:layout_width="match_parent"
+                android:text="Pembukaan"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/material_on_primary_emphasis_medium"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+
+<!--            <View-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="?colorDivider"-->
+<!--                android:layout_height="1dp"/>-->
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="275dp"
+                android:layout_gravity="center"
+                app:dividerThickness="4dp"
+                app:dividerColor="@color/material_on_surface_stroke"
+                android:layout_marginTop="12dp"
+                android:layout_height="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:textSize="20sp"
+                    android:textColor="@color/material_on_primary_emphasis_medium"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:text="Makiyyah"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:id="@+id/ayatTotal"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/material_on_primary_emphasis_medium"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:text="7 Ayat"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/bismillah"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/utsmanichafs"
+                android:textSize="40sp"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:text="بسم الله الر حمن الرحيم"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="?primary_50"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="56dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="4"
+                android:layout_marginTop="2dp"
+                android:layout_height="50dp">
+                <ImageView
+                    android:id="@+id/frameNumber"
+                    android:layout_width="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_baseline_circle_24"
+                    android:layout_height="45dp"
+                    app:tint="?colorPrimary" />
+
+                <TextView
+                    android:id="@+id/ayahCounter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/frameNumber"
+                    android:layout_alignTop="@+id/frameNumber"
+                    android:layout_alignEnd="@+id/frameNumber"
+                    android:layout_alignBottom="@+id/frameNumber"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_round_done_outline_24"
+                    android:layout_height="30dp"
+                    app:tint="?colorPrimary" />
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/ic_outline_play_arrow_24"
+                    android:layout_height="35dp"
+                    app:tint="?colorPrimary" />
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_outline_share_24"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    app:tint="?colorPrimary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textDirection="rtl"
+            android:id="@+id/ayat_quran"
+            android:layout_width="match_parent"
+            android:textSize="35sp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:fontFamily="@font/utsmanichafs"
+            android:text="الحمدلله رب العالمين"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/translate"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/material_on_background_emphasis_medium"
+            android:layout_width="match_parent"
+            android:text="Segala puji bagi Alloh Rabb Semesta Alam"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        app:dividerThickness="1dp"
+        android:layout_marginTop="18dp"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

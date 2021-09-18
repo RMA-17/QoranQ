@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/txt_salam"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_marginStart="18dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/material_on_background_emphasis_medium"
+        android:text="Assalamu'alaikum"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_marginStart="18dp"
+        android:textSize="28sp"
+        android:layout_marginTop="1dp"
+        android:textColor="@color/material_on_background_emphasis_high_type"
+        android:text="Babang!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="18dp"
+        app:cardBackgroundColor="?colorPrimary"
+        android:layout_height="165dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lastRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="5dp"
+                android:text="Last Read"
+                android:textColor="@color/material_on_primary_emphasis_medium"
+                android:textSize="20sp"
+                app:drawableLeftCompat="@drawable/ic_round_menu_book_24"
+                app:drawableTint="@color/material_on_primary_emphasis_medium" />
+
+            <TextView
+                android:id="@+id/txt_surah_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lastRead"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Al-Fatihah"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_ayah_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_surah_name"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Ayah No. 1"
+                android:textColor="@color/material_on_primary_emphasis_medium"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/image_quran"
+                android:layout_width="150dp"
+                android:layout_height="135dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_quran_logo" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:elevation="1dp"
+        android:backgroundTint="?colorDivider"
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:text="Surah"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:text="Juz"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:text="Page"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/itemviewquranbysurah"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent">
+    </androidx.viewpager2.widget.ViewPager2>
+
+</LinearLayout>
