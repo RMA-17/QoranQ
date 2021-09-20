@@ -28,10 +28,10 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
         val totalAyah = totalAyah[surahNumber - 1]
         holder.bindView(ayat, totalAyah)
 
-        holder.binding.itemCopy.setOnClickListener{
+        holder.binding.itemShare.setOnClickListener{
             shareOnclickListener?.invoke(ayat, position)
         }
-        holder.binding.itemShare.setOnClickListener {
+        holder.binding.itemCopy.setOnClickListener {
             copyOnclickListener?.invoke(ayat, position)
         }
 
@@ -51,6 +51,12 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
             binding.CardView.isVisible = ayatList.AyahNumber == 1
             binding.ayatTotal.text = "${totalAyah} Ayat"
             binding.bismillah.isVisible = ayatList.surahNumber != 9
+            if (ayatList.surahNumber == 1 and 9){
+                binding.bismillah.text = "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"
+                binding.bismillah.textSize = 35F
+            } else {
+                binding.bismillah.text = "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+            }
         }
     }
 }

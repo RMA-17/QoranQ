@@ -144,12 +144,14 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:background="?selectableItemBackground"
                     android:id="@+id/itemCopy"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_baseline_content_copy_24"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
+                    android:padding="14dp"
                     app:tint="?colorPrimary" />
                 <ImageView
                     android:layout_gravity="center"
@@ -159,12 +161,14 @@
                     android:layout_height="35dp"
                     app:tint="?colorPrimary" />
                 <ImageView
+                    android:background="?selectableItemBackground"
                     android:id="@+id/item_Share"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:src="@drawable/ic_outline_share_24"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
                     app:tint="?colorPrimary" />
 
             </LinearLayout>

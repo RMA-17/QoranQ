@@ -68,10 +68,11 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
                     clipboard.setPrimaryClip(clip)
+                    Toast.makeText(requireContext(), "Ayat berhasil disalin", Toast.LENGTH_SHORT).show()
                 }
                 adapter.shareOnclickListener = { quran, position ->
                     val text:String = "${quran.TextQuran}" +
@@ -80,7 +81,7 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     //ShareCompat digunakan untuk meng-share content
                     //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
                     //Jika dalam fragment seperti ini:
@@ -110,10 +111,12 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
                     clipboard.setPrimaryClip(clip)
+                    Toast.makeText(requireContext(), "Ayat berhasil disalin", Toast.LENGTH_SHORT).show()
+
                 }
                 adapter.shareOnclickListener = { quran, position ->
                     val text:String = "${quran.TextQuran}" +
@@ -122,7 +125,7 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     //ShareCompat digunakan untuk meng-share content
                     //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
                     //Jika dalam fragment seperti ini:
@@ -152,10 +155,12 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                     val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
                     clipboard.setPrimaryClip(clip)
+                    Toast.makeText(requireContext(), "Ayat berhasil disalin", Toast.LENGTH_SHORT).show()
+
                 }
                 adapter.shareOnclickListener = { quran, position ->
                     val text:String = "${quran.TextQuran}" +
@@ -164,7 +169,7 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                             "${quran.translation}" +
                             "\n" +
                             "\n" +
-                            "QS. Surah ${quran.SurahName_en}"
+                            "QS. Surah ${quran.SurahName_en}: ${quran.AyahNumber}"
                     //ShareCompat digunakan untuk meng-share content
                     //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
                     //Jika dalam fragment seperti ini:
