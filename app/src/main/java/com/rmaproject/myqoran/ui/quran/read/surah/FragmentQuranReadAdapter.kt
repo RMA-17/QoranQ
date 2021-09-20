@@ -14,9 +14,8 @@ import com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranReadAdapter.Quran
 class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
                                private val totalAyah:List<Int>) : RecyclerView.Adapter<QuranReadViewHolder>() {
 
-    private var shareOnclickListener:((Quran) -> Unit)? = null
-    private var copyOnclickListener:((Quran) -> Unit)? = null
-
+    var shareOnclickListener:((Quran, Int) -> Unit)? = null
+    var copyOnclickListener:((Quran, Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranReadViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ayat, parent, false)
@@ -30,10 +29,10 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
         holder.bindView(ayat, totalAyah)
 
         holder.binding.itemCopy.setOnClickListener{
-            shareOnclickListener?.invoke(ayat)
+            shareOnclickListener?.invoke(ayat, position)
         }
         holder.binding.itemShare.setOnClickListener {
-            copyOnclickListener?.invoke(ayat)
+            copyOnclickListener?.invoke(ayat, position)
         }
 
     }

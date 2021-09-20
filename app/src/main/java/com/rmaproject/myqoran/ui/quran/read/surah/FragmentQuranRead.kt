@@ -1,9 +1,13 @@
 package com.rmaproject.myqoran.ui.quran.read.surah
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -57,6 +61,36 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                 val adapter = FragmentQuranReadAdapter(listQuran, totalAyah)
                 binding.RecyclerVIew.adapter = adapter
                 binding.RecyclerVIew.layoutManager = LinearLayoutManager(context)
+                adapter.copyOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
+                    clipboard.setPrimaryClip(clip)
+                }
+                adapter.shareOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    //ShareCompat digunakan untuk meng-share content
+                    //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
+                    //Jika dalam fragment seperti ini:
+                    ShareCompat.IntentBuilder(requireContext())
+                        .setText(text)
+                        .setType("text/plain")
+                        .setChooserTitle("Judul")
+                        .startChooser()
+
+                }
             })
     }
 
@@ -69,6 +103,37 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                 binding.RecyclerVIew.adapter = adapter
                 binding.RecyclerVIew.layoutManager = LinearLayoutManager(context)
 
+                adapter.copyOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
+                    clipboard.setPrimaryClip(clip)
+                }
+                adapter.shareOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    //ShareCompat digunakan untuk meng-share content
+                    //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
+                    //Jika dalam fragment seperti ini:
+                    ShareCompat.IntentBuilder(requireContext())
+                        .setText(text)
+                        .setType("text/plain")
+                        .setChooserTitle("Judul")
+                        .startChooser()
+
+                }
+
             })
     }
 
@@ -79,6 +144,37 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                 val adapter = FragmentQuranReadAdapter(listQuran, totalAyah)
                 binding.RecyclerVIew.adapter = adapter
                 binding.RecyclerVIew.layoutManager = LinearLayoutManager(context)
+
+                adapter.copyOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("Copy ayah to Clipboard", text)
+                    clipboard.setPrimaryClip(clip)
+                }
+                adapter.shareOnclickListener = { quran, position ->
+                    val text:String = "${quran.TextQuran}" +
+                            "\n" +
+                            "\n" +
+                            "${quran.translation}" +
+                            "\n" +
+                            "\n" +
+                            "QS. Surah ${quran.SurahName_en}"
+                    //ShareCompat digunakan untuk meng-share content
+                    //Jika dalam activity, penulisannya begini: val share:Intent = ShareCompat.IntentBuilder(Context)
+                    //Jika dalam fragment seperti ini:
+                    ShareCompat.IntentBuilder(requireContext())
+                        .setText(text)
+                        .setType("text/plain")
+                        .setChooserTitle("Judul")
+                        .startChooser()
+
+                }
             })
     }
 
