@@ -5,7 +5,7 @@ import androidx.room.DatabaseView
 import androidx.room.PrimaryKey
 
 
-@DatabaseView("SELECT sora, sora_name_ar, sora_name_en, count(id) as ayah_total FROM quran GROUP by sora")
+@DatabaseView("SELECT sora, sora_name_ar, sora_name_en, COUNT(id) as ayah_total FROM quran GROUP by sora")
 
 data class Surah(
 

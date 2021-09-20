@@ -5,7 +5,7 @@ import androidx.room.DatabaseView
 import androidx.room.PrimaryKey
 
 
-@DatabaseView("SELECT MIN(id) AS idMin, jozz, sora, aya_text, sora_name_ar, sora_name_en, count(id) as ayah_total FROM quran GROUP BY jozz ORDER BY idMin ASC")
+@DatabaseView("SELECT MIN(id) AS idMin, jozz, sora, aya_text, sora_name_ar, sora_name_en FROM quran GROUP BY jozz ORDER BY idMin ASC")
 data class Jozz(
     @PrimaryKey
     val id:Int? = 0,

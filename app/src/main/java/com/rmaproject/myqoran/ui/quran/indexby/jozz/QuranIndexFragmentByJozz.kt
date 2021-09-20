@@ -14,6 +14,7 @@ import com.rmaproject.myqoran.data.QuranDatabase
 import com.rmaproject.myqoran.databinding.FragmentQuranIndexByJozzBinding
 import com.rmaproject.myqoran.model.Quran
 import com.rmaproject.myqoran.ui.quran.indexby.surah.QuranIndexAdapterSurah
+import com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranRead
 
 class QuranIndexFragmentByJozz : Fragment(R.layout.fragment_quran_index_by_jozz) {
 
@@ -29,8 +30,7 @@ class QuranIndexFragmentByJozz : Fragment(R.layout.fragment_quran_index_by_jozz)
                 Log.d("CHECKDATA", jozzList.size.toString())
                 val adapter = QuranIndexAdapterJozz(jozzList) { jozzList ->
                     val jozzNumber: Int = jozzList.juzNumber ?: 1
-                    val totalAyat: Int = jozzList.numberOfAyah ?: 1
-                    val bundle = bundleOf("JOZZNUMBER" to jozzNumber, "TOTALAYAT" to totalAyat)
+                    val bundle = bundleOf(FragmentQuranRead.KEY_JOZZ_NUMBER to jozzNumber)
                     findNavController().navigate(R.id.action_nav_home_to_nav_read_quran, bundle)
                 }
                 binding.RecyclerViewAyat.adapter = adapter

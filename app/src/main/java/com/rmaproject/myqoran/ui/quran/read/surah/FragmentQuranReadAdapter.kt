@@ -1,6 +1,5 @@
 package com.rmaproject.myqoran.ui.quran.read.surah
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,12 @@ import com.rmaproject.myqoran.databinding.ItemAyatBinding
 import com.rmaproject.myqoran.model.Quran
 import com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranReadAdapter.QuranReadViewHolder
 
-class FragmentQuranReadAdapter(val ayatList:List<Quran>, val totalAyah:Int) : RecyclerView.Adapter<QuranReadViewHolder>() {
+class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
+                               private val totalAyah:List<Int>) : RecyclerView.Adapter<QuranReadViewHolder>() {
+
+    private var shareOnclickListener:((Quran) -> Unit)? = null
+    private var copyOnclickListener:((Quran) -> Unit)? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranReadViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ayat, parent, false)
@@ -21,7 +25,16 @@ class FragmentQuranReadAdapter(val ayatList:List<Quran>, val totalAyah:Int) : Re
 
     override fun onBindViewHolder(holder: QuranReadViewHolder, position: Int) {
         val ayat = ayatList[position]
+        val surahNumber : Int = ayat.surahNumber ?: 1
+        val totalAyah = totalAyah[surahNumber - 1]
         holder.bindView(ayat, totalAyah)
+
+        holder.binding.itemCopy.setOnClickListener{
+            shareOnclickListener?.invoke(ayat)
+        }
+        holder.binding.itemShare.setOnClickListener {
+            copyOnclickListener?.invoke(ayat)
+        }
 
     }
 
@@ -38,7 +51,7 @@ class FragmentQuranReadAdapter(val ayatList:List<Quran>, val totalAyah:Int) : Re
             binding.translate.text = ayatList.translation
             binding.CardView.isVisible = ayatList.AyahNumber == 1
             binding.ayatTotal.text = "${totalAyah} Ayat"
+            binding.bismillah.isVisible = ayatList.surahNumber != 9
         }
     }
-
 }

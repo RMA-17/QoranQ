@@ -14,6 +14,7 @@ import com.rmaproject.myqoran.data.QuranDatabase
 import com.rmaproject.myqoran.databinding.FragmentQuranIndexByPageBinding
 import com.rmaproject.myqoran.model.Quran
 import com.rmaproject.myqoran.ui.quran.indexby.surah.QuranIndexAdapterSurah
+import com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranRead
 
 class QuranIndexFragmentByPage : Fragment(R.layout.fragment_quran_index_by_page) {
 
@@ -29,8 +30,7 @@ class QuranIndexFragmentByPage : Fragment(R.layout.fragment_quran_index_by_page)
                 Log.d("CHECKDATA", pageList.size.toString())
                 val adapter = QuranIndexAdapterPage(pageList) { page ->
                     val pageNumber = page.page ?: 1
-                    val totalAyah = page.numberOfAyah ?: 1
-                    val bundle = bundleOf("PAGENUMBER" to pageNumber, "TOTALAYAT" to totalAyah)
+                    val bundle = bundleOf(FragmentQuranRead.KEY_PAGE_NUMBER to pageNumber)
                     findNavController().navigate(R.id.action_nav_home_to_nav_read_quran, bundle)
                 }
 

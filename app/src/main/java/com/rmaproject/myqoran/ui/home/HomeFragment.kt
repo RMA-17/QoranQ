@@ -3,7 +3,10 @@ package com.rmaproject.myqoran.ui.home
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.viewpager2.widget.ViewPager2
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rmaproject.myqoran.R
@@ -20,6 +23,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val bindings: FragmentHomeBinding by viewBinding()
     private val titles:List<String> = listOf("Surah","Juz","Page")
     private val fragmentList:List<Fragment> = listOf(QuranIndexFragmentBySurah(), QuranIndexFragmentByJozz(), QuranIndexFragmentByPage()) //List Fragment yang bakal bisa digeser
+    private val viewModel:QuranViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,6 +37,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
        val adapter:ViewPageAdapter = ViewPageAdapter(this, fragmentList)
 
         bindings.viewPager.adapter = adapter
+        bindings.viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                viewModel.setPositionTab(position)
+            }
+        })
         TabLayoutMediator(bindings.tabLayout, bindings.viewPager) { tab, position ->
             tab.text = titles[position]
         }.attach()

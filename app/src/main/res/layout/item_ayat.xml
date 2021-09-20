@@ -17,7 +17,7 @@
         app:strokeColor="@color/material_on_surface_stroke"
         android:elevation="10dp"
         android:backgroundTint="?colorPrimary"
-        android:layout_height="260dp">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -61,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_gravity="center"
@@ -143,10 +144,11 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/itemCopy"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_round_done_outline_24"
+                    android:src="@drawable/ic_baseline_content_copy_24"
                     android:layout_height="30dp"
                     app:tint="?colorPrimary" />
                 <ImageView
@@ -157,6 +159,7 @@
                     android:layout_height="35dp"
                     app:tint="?colorPrimary" />
                 <ImageView
+                    android:id="@+id/item_Share"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:src="@drawable/ic_outline_share_24"

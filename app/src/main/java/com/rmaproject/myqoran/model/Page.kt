@@ -5,7 +5,7 @@ import androidx.room.DatabaseView
 import androidx.room.PrimaryKey
 
 
-@DatabaseView("SELECT MIN(id) as id, page, sora, aya_no, aya_text, sora_name_en, sora_name_ar, count(id) as ayah_total FROM quran GROUP by page ORDER BY id")
+@DatabaseView("SELECT MIN(id) as id, page, sora, aya_no, aya_text, sora_name_en, sora_name_ar FROM quran GROUP by page ORDER BY id")
 data class Page(
     @PrimaryKey val id:Int? = 0,
     @ColumnInfo(name = "page") val page : Int? = 0,
