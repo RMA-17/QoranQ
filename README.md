@@ -29,4 +29,4 @@ Bugs and development list:_
 - [ ] Ayah numbers that are inverted, Example: 12 written in arab 21
 - [ ] Can't show the last ayah on the page
 - [ ] Play button still not working
-- [ ] App icon not added
+- [X] App icon not added
