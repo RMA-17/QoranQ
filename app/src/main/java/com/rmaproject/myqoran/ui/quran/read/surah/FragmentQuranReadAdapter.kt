@@ -43,20 +43,28 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
 
     class QuranReadViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
         val binding : ItemAyatBinding by viewBinding()
-        fun bindView(ayatList:Quran, totalAyah: Int){
+        fun bindView(ayatList:Quran, totalAyah: Int) = binding.apply {
             binding.ayahCounter.text = ayatList.AyahNumber.toString()
             binding.ayatQuran.text = ayatList.TextQuran
             binding.namaSurat.text = ayatList.SurahName_en
             binding.translate.text = ayatList.translation
             binding.CardView.isVisible = ayatList.AyahNumber == 1
             binding.ayatTotal.text = "${totalAyah} Ayat"
-            binding.bismillah.isVisible = ayatList.surahNumber != 9
-            if (ayatList.surahNumber == 1 and 9){
+            if (ayatList.surahNumber == SurahAlFatihah){
                 binding.bismillah.text = "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"
                 binding.bismillah.textSize = 35F
-            } else {
+            } else if(ayatList.surahNumber == SurahAtTaubah){
+                binding.bismillah.text = "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"
+                binding.bismillah.textSize = 35F
+            }
+            else {
                 binding.bismillah.text = "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
             }
         }
+    }
+
+    companion object{
+        const val SurahAtTaubah = 9
+        const val SurahAlFatihah = 1
     }
 }
