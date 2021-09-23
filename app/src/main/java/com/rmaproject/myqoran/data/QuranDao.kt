@@ -20,13 +20,13 @@ interface QuranDao {
     @Query("SELECT * FROM Page")
     fun showQuranIndexByPage():Flow<List<Page>>
 
-    @Query("SELECT sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, footnotes FROM quran WHERE sora = :surahNumber")
+    @Query("SELECT sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, sora_name_id,sora_descend_place, footnotes FROM quran WHERE sora = :surahNumber")
     fun readQuranBySurah(surahNumber:Int):Flow<List<Quran>>
 
-    @Query("SELECT sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, footnotes FROM quran WHERE jozz = :jozzNumber")
+    @Query("SELECT sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, sora_name_id, sora_descend_place, footnotes FROM quran WHERE jozz = :jozzNumber")
     fun readQuranByJozz(jozzNumber:Int):Flow<List<Quran>>
 
-    @Query("SELECT page, sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, footnotes FROM quran WHERE page = :pageNumber")
+    @Query("SELECT page, sora, jozz, aya_no, aya_text, aya_text_emlaey, translation, sora_name_ar, sora_name_en, sora_name_id, sora_descend_place, footnotes FROM quran WHERE page = :pageNumber")
     fun readQUranByPage(pageNumber:Int):Flow<List<Quran>>
 
 }

@@ -63,7 +63,7 @@
                     android:id="@+id/turunDi"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/material_on_background_emphasis_medium"
-                    android:text="Mekkah"
+                    android:text="Meccan and Madinan"
                     android:layout_weight="1"
                     android:textSize="20sp"
                     android:layout_height="wrap_content"
@@ -95,6 +95,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/meccaormadina"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_alignTop="@id/surahNameArabic"

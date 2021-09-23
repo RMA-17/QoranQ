@@ -1,15 +1,14 @@
 package com.rmaproject.myqoran.ui.home
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rmaproject.myqoran.model.Surah
-import java.text.FieldPosition
 
 class QuranViewModel : ViewModel() {
 
     private val positionTab : MutableLiveData<Int> = MutableLiveData()
     private val totalAyahs:MutableLiveData<List<Int>> = MutableLiveData()
+    private val surahNameID:MutableLiveData<List<String>> = MutableLiveData()
 
     fun setPositionTab(position: Int){
         positionTab.value = position
@@ -25,6 +24,7 @@ class QuranViewModel : ViewModel() {
         }
         totalAyahs.value = listTotalAyahs
     }
+
 
     fun getTotalAyahList() = totalAyahs
 }

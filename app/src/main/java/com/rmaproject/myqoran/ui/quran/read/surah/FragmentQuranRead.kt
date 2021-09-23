@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -31,6 +32,8 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         val surahNumber = arguments?.getInt(KEY_SURAH_NUMBER) ?: 1
         val jozzNumber = arguments?.getInt(KEY_JOZZ_NUMBER) ?: 1
         val pageNumber = arguments?.getInt(KEY_PAGE_NUMBER) ?: 1
+        val surahName = arguments?.getString(KEY_NAMA_SURAT) ?: ""
+        var toolbarTitle:String = ""
 
         val database = QuranDatabase.getInstance(requireContext())
         val quranDao = database.quranDao()
@@ -42,19 +45,23 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                         quranDao.readQuranBySurah(surahNumber).asLiveData().observe(viewLifecycleOwner, Observer { listQuran ->
                             setQuranAdapter(listQuran, totalAyah)
                         })
+                        toolbarTitle = surahName
                     }
                     TAB_JUZ -> {
                         quranDao.readQuranByJozz(jozzNumber).asLiveData().observe(viewLifecycleOwner, Observer { listQuran ->
                             setQuranAdapter(listQuran, totalAyah)
                         })
-
+                        toolbarTitle = "Juz $jozzNumber"
                     }
                     TAB_PAGE -> {
                         quranDao.readQUranByPage(pageNumber).asLiveData().observe(viewLifecycleOwner, Observer { listQuran ->
                             setQuranAdapter(listQuran, totalAyah)
                         })
+                        toolbarTitle = "page $pageNumber"
                     }
                 }
+                val toolbarActivity = requireActivity().findViewById<Toolbar>(R.id.toolbar)
+                toolbarActivity.title = toolbarTitle
 
             })
 
@@ -99,6 +106,10 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         }
         binding.RecyclerVIew.adapter = adapter
         binding.RecyclerVIew.layoutManager = LinearLayoutManager(context)
+        adapter.footNoteOnClickListener = { quran ->
+            Toast.makeText(requireContext(), "${quran.footnotes}", Toast.LENGTH_SHORT).show()
+
+        }
     }
 
     //Companion object berguna untuk menyetor sebuah const value, dan bisa digunakan di tempat lain
@@ -109,5 +120,6 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         const val TAB_SURAH = 0
         const val TAB_JUZ = 1
         const val TAB_PAGE = 2
+        const val KEY_NAMA_SURAT = "NAMASURAT"
     }
 }
