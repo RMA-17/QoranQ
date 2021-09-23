@@ -7,7 +7,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbyjozzBinding
 import com.rmaproject.myqoran.model.Jozz
-import com.rmaproject.myqoran.model.Surah
 import com.rmaproject.myqoran.ui.quran.indexby.jozz.QuranIndexAdapterJozz.QuranIndexJozzViewHolder
 
 class QuranIndexAdapterJozz(val jozzList:List<Jozz>, val clickListener:(Jozz) -> Unit): RecyclerView.Adapter<QuranIndexJozzViewHolder>() {

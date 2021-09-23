@@ -10,7 +10,7 @@ import com.rmaproject.myqoran.model.Page
 import com.rmaproject.myqoran.model.Quran
 import com.rmaproject.myqoran.model.Surah
 
-@Database(entities = arrayOf(Quran::class), views = arrayOf(Surah::class, Jozz::class, Page::class), version = 11)
+@Database(entities = arrayOf(Quran::class), views = arrayOf(Surah::class, Jozz::class, Page::class), version = 12)
 abstract class QuranDatabase : RoomDatabase(){
     abstract fun quranDao(): QuranDao
 

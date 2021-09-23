@@ -1,6 +1,5 @@
 package com.rmaproject.myqoran.ui.quran.indexby.page
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbypageBinding
 import com.rmaproject.myqoran.model.Page
-import com.rmaproject.myqoran.model.Surah
 import com.rmaproject.myqoran.ui.quran.indexby.page.QuranIndexAdapterPage.QuranIndexViewHolder
 
 class QuranIndexAdapterPage(val pageList:List<Page>,

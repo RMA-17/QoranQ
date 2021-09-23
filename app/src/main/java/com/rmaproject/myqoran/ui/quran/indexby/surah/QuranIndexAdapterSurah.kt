@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbysurahBinding
-import com.rmaproject.myqoran.model.Quran
 import com.rmaproject.myqoran.model.Surah
 
 class QuranIndexAdapterSurah(val surahList:List<Surah>,
@@ -42,8 +41,15 @@ class QuranIndexAdapterSurah(val surahList:List<Surah>,
             binding.surahlocator.text = surah.surahNumber.toString()
             binding.surahnameEN.text = surah.surahNameEN
             binding.ayatTotal.text = "${surah.numberOfAyah.toString()} Ayah"
-            binding.turunDi.isVisible = false
+            binding.turunDi.text = surah.turunSurah
             binding.dots.isVisible = false
+            if (surah.turunSurah == "Meccan"){
+                binding.meccaormadina.setImageResource(R.drawable.ic_mecca)
+                binding.turunDi.text = "Mekkah"
+            } else if (surah.turunSurah == "Madinan") {
+                binding.meccaormadina.setImageResource(R.drawable.ic_medina)
+                binding.turunDi.text = "Madinah"
+            }
 
         }
 
