@@ -2,10 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/searchbar"
-        android:title="Search"
-        android:iconTint="@color/material_on_background_emphasis_high_type"
-        
+        android:id="@+id/closebutton"
+        android:title="Close"
         app:showAsAction="always"
-        android:icon="@drawable/ic_baseline_search_24"/>
+        android:icon="@drawable/ic_baseline_close_24"/>
 </menu>

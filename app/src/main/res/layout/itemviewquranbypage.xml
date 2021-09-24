@@ -8,6 +8,7 @@
     android:id="@+id/clickableLayout"
     android:layout_height="wrap_content">
 
+    <!--    This layout was created by Raka M.A-->
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -91,3 +92,11 @@
         android:layout_height="1dp"/>
 
 </LinearLayout>
+
+
+
+
+
+
+
+    <!-- This layout was created by Raka M.A -->

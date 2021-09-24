@@ -25,6 +25,7 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
     var shareOnclickListener:((Quran, Int) -> Unit)? = null
     var copyOnclickListener:((Quran, Int) -> Unit)? = null
     var footNoteOnClickListener:((Quran) -> Unit)? = null
+    var playMurottalListener:((Quran, Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranReadViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ayat, parent, false)
@@ -38,6 +39,9 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
         holder.footNoteTracker(holder.itemView, ayat, footNoteOnClickListener)
         holder.bindView(ayat, totalAyah, position)
 
+        holder.binding.playMurottal.setOnClickListener {
+            playMurottalListener?.invoke(ayat, position)
+        }
         holder.binding.itemShare.setOnClickListener{
             shareOnclickListener?.invoke(ayat, position)
         }
@@ -67,6 +71,8 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
                 turunDi.text = "Mekkah"
             } else if (ayatList.turunSurah == "Madinan") {
                 turunDi.text = "Madinah"
+            } else if (ayatList.turunSurah == "Meccan and Madinan") {
+                turunDi.text = "Mekkah"
             }
             if (ayatList.surahNumber == SurahAlFatihah){
                 binding.bismillah.text = "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"
@@ -111,7 +117,9 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
             }
             binding.translate.movementMethod = LinkMovementMethod.getInstance()
             binding.translate.setText(spannable, TextView.BufferType.SPANNABLE)
-
+            /*
+            Code writen by Raka M.A
+             */
         }
     }
 

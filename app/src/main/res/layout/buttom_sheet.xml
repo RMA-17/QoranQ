@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/buttomSheet"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:title="Catatan Kaki"
+        app:menu="@menu/buttom_sheet_menu"
+        app:titleTextColor="@color/material_on_surface_emphasis_high_type"
+        android:layout_height="match_parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_margin="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textFootnote"
+            android:layout_width="match_parent"
+            android:textSize="18dp"
+            android:text="asdlkf;jasdf;lkasdfjlasfakl;sdfjlsadk"
+            android:layout_height="match_parent"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+
+<!-- This layout was created by Raka M.A -->

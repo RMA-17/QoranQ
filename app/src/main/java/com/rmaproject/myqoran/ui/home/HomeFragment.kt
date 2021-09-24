@@ -3,6 +3,9 @@ package com.rmaproject.myqoran.ui.home
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+/*
+            Code writen by Raka M.A
+             */
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels

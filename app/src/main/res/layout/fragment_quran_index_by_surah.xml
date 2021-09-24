@@ -9,6 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <!--    This layout was created by Raka M.A-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewAyat"
         android:layout_width="match_parent"
@@ -21,3 +22,11 @@
 
 
 </LinearLayout>
+
+
+
+
+
+
+
+    <!-- This layout was created by Raka M.A -->

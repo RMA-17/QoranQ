@@ -155,6 +155,7 @@
                     android:padding="14dp"
                     app:tint="?colorPrimary" />
                 <ImageView
+                    android:id="@+id/playMurottal"
                     android:background="?selectableItemBackground"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -214,3 +215,5 @@
         android:layout_height="1dp"/>
 
 </LinearLayout>
+
+<!-- This layout was created by Raka M.A -->

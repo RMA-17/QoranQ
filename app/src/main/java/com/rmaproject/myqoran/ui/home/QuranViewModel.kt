@@ -8,7 +8,6 @@ class QuranViewModel : ViewModel() {
 
     private val positionTab : MutableLiveData<Int> = MutableLiveData()
     private val totalAyahs:MutableLiveData<List<Int>> = MutableLiveData()
-    private val surahNameID:MutableLiveData<List<String>> = MutableLiveData()
 
     fun setPositionTab(position: Int){
         positionTab.value = position

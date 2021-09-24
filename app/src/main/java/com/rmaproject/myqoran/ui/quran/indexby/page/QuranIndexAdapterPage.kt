@@ -5,6 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
+/*
+            Code writen by Raka M.A
+             */
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbypageBinding
 import com.rmaproject.myqoran.model.Page

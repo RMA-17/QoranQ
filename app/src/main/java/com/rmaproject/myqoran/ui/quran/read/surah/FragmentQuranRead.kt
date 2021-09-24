@@ -9,16 +9,22 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ShareCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.lzx.starrysky.SongInfo
+import com.lzx.starrysky.StarrySky
+import com.lzx.starrysky.control.RepeatMode
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.data.QuranDatabase
 import com.rmaproject.myqoran.databinding.FragmentReadQuranBinding
 import com.rmaproject.myqoran.model.Quran
+import com.rmaproject.myqoran.ui.bottomsheet.ButtomSheet
 import com.rmaproject.myqoran.ui.home.QuranViewModel
 
 class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
@@ -107,9 +113,29 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         binding.RecyclerVIew.adapter = adapter
         binding.RecyclerVIew.layoutManager = LinearLayoutManager(context)
         adapter.footNoteOnClickListener = { quran ->
-            Toast.makeText(requireContext(), "${quran.footnotes}", Toast.LENGTH_SHORT).show()
+            val bundle = bundleOf(ButtomSheet.KEY_TERIMA_FOOTNOTE to quran.footnotes)
+            findNavController().navigate(R.id.action_nav_read_quran_to_buttomSheet, bundle)
 
         }
+        adapter.playMurottalListener = { quran, position->
+            val numberofSurah = String.format("%03d", quran.surahNumber)
+            val ayatNumber = String.format("%03d",quran.AyahNumber)
+            val url = "https://archive.org/download/quran-every-ayah/Mishary%20Rashid%20Alafasy.zip/$numberofSurah$ayatNumber.mp3"
+            val audio = SongInfo()
+            audio.songId = "$numberofSurah$ayatNumber"
+            audio.songUrl = url
+            audio.artist = "Mishary Rashid Alafasy"
+            audio.songName = "${quran.SurahName_en} : ${quran.AyahNumber}"
+            audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
+            StarrySky.with().playMusicByInfo(audio)
+            /*
+            Code writen by Raka M.A
+             */
+            StarrySky.with().setRepeatMode(RepeatMode.REPEAT_MODE_NONE, isLoop = false)
+            Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
+
+        }
+
     }
 
     //Companion object berguna untuk menyetor sebuah const value, dan bisa digunakan di tempat lain

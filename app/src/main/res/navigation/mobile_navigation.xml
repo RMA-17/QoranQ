@@ -32,5 +32,14 @@
         android:name="com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranRead"
         android:label="Quran Read"
         tools:layout="@layout/fragment_read_quran"
-        />
+        >
+        <action
+            android:id="@+id/action_nav_read_quran_to_buttomSheet"
+            app:destination="@id/buttomSheet" />
+    </fragment>
+    <dialog
+        tools:layout="@layout/buttom_sheet"
+        android:id="@+id/buttomSheet"
+        android:name="com.rmaproject.myqoran.ui.bottomsheet.ButtomSheet"
+        android:label="ButtomSheet" />
 </navigation>

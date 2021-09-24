@@ -2,6 +2,9 @@ package com.rmaproject.myqoran.ui.quran.indexby.jozz
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+/*
+            Code writen by Raka M.A
+             */
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rmaproject.myqoran.R

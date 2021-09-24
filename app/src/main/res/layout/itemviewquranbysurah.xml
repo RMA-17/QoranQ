@@ -8,6 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!--    This layout was created by Raka M.A-->
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -128,3 +129,6 @@
 
 
 </LinearLayout>
+
+
+    <!--    This layout was created by Raka M.A-->
