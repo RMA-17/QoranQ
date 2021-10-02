@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @DatabaseView("SELECT sora, sora_name_ar, sora_name_en, sora_name_id, COUNT(id) as ayah_total, sora_descend_place FROM quran GROUP by sora")
 
-data class Surah(
+data class Surah (
 
     @PrimaryKey val id:Int? = 0,
     @ColumnInfo(name = "sora") val surahNumber:Int? = 0,

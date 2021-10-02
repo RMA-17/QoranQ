@@ -10,10 +10,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
              */
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbypageBinding
+import com.rmaproject.myqoran.model.AyahTerakhirFinder
 import com.rmaproject.myqoran.model.Page
 import com.rmaproject.myqoran.ui.quran.indexby.page.QuranIndexAdapterPage.QuranIndexViewHolder
 
-class QuranIndexAdapterPage(val pageList:List<Page>,
+class QuranIndexAdapterPage(val pageList:List<Page>, val ayahTerakhir:List<AyahTerakhirFinder>,
                             val clickListener:(Page) -> Unit
 ) :
     RecyclerView.Adapter<QuranIndexViewHolder>() {
@@ -26,7 +27,8 @@ class QuranIndexAdapterPage(val pageList:List<Page>,
 
     override fun onBindViewHolder(holder: QuranIndexViewHolder, position: Int) {
         val page = pageList[position]
-        holder.bindingView(page)
+        val ayahterakhir = ayahTerakhir[position]
+        holder.bindingView(page, ayahterakhir)
         holder.binding.clickableLayout.setOnClickListener {
             clickListener.invoke(page)
         }
@@ -39,11 +41,11 @@ class QuranIndexAdapterPage(val pageList:List<Page>,
     class QuranIndexViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val binding:ItemviewquranbypageBinding by viewBinding()
-        fun bindingView(page:Page) {
+        fun bindingView(page:Page, ayahTerakhir:AyahTerakhirFinder) {
             binding.pageCounter.text = page.page.toString()
             binding.halamanLocator.text = "Halaman ${page.page.toString()}"
-            binding.firstsurahLine.text = "${page.SurahName_en}"
-            binding.lastSurahLine.text = page.TextQuran
+            binding.firstsurahLine.text = "${page.SurahName_en}: ${page.AyahNumber}"
+            binding.lastSurahLine.text = "${ayahTerakhir.SurahName_en}: ${ayahTerakhir.AyahNumber}"
 
         }
 

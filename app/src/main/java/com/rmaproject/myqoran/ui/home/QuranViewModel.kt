@@ -7,7 +7,8 @@ import com.rmaproject.myqoran.model.Surah
 class QuranViewModel : ViewModel() {
 
     private val positionTab : MutableLiveData<Int> = MutableLiveData()
-    private val totalAyahs:MutableLiveData<List<Int>> = MutableLiveData()
+    private val totalAyahs: MutableLiveData<List<Int>> = MutableLiveData()
+    private val nama_surat : MutableLiveData<List<String>> = MutableLiveData()
 
     fun setPositionTab(position: Int){
         positionTab.value = position
@@ -22,6 +23,15 @@ class QuranViewModel : ViewModel() {
             listTotalAyahs.add(numberOfAyah)
         }
         totalAyahs.value = listTotalAyahs
+    }
+
+    fun getSurahName (surahList:List<Surah>){
+        val listSurah = mutableListOf<String>()
+        surahList.forEach{
+            val nama_surah = it.surahNameEN ?: 1
+            listSurah.add(nama_surah.toString())
+        }
+        nama_surat.value = listSurah
     }
 
 

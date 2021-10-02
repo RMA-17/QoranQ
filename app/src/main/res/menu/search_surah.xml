@@ -2,8 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/searchSurah"
+        android:id="@+id/searchButton"
         app:showAsAction="always"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search Surah" />
+        android:title="Search Surah"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
 </menu>

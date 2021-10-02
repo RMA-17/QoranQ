@@ -2,10 +2,7 @@ package com.rmaproject.myqoran.data
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.rmaproject.myqoran.model.Jozz
-import com.rmaproject.myqoran.model.Page
-import com.rmaproject.myqoran.model.Quran
-import com.rmaproject.myqoran.model.Surah
+import com.rmaproject.myqoran.model.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao //Data access object = Untuk menyimpan query SQL
@@ -13,6 +10,9 @@ interface QuranDao {
 
     @Query("SELECT * FROM Surah")
     fun showQuranIndexBySurah():Flow<List<Surah>>
+
+    @Query("SELECT * FROM AyahTerakhirFinder")
+    fun showAyahterakhir():Flow<List<AyahTerakhirFinder>>
 
     @Query("SELECT * FROM Jozz")
     fun showQuranIndexByJozz():Flow<List<Jozz>>

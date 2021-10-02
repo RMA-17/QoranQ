@@ -82,6 +82,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <TextView
+                            android:id="@+id/version"
                             android:textColor="@color/material_on_surface_emphasis_medium"
                             android:layout_marginStart="10dp"
                             android:textSize="18sp"
@@ -122,6 +123,8 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:background="?selectableItemBackground"
+                    android:id="@+id/bukaLisensi"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -201,6 +204,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/toGitHub"
+                    android:background="?selectableItemBackground"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -254,6 +259,8 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
                 <LinearLayout
+                    android:background="?selectableItemBackground"
+                    android:id="@+id/copyMail"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -281,6 +288,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/toInstagram"
+                    android:background="?selectableItemBackground"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"

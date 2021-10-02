@@ -30,6 +30,7 @@ class QuranIndexFragmentBySurah : Fragment(R.layout.fragment_quran_index_by_sura
         context?.let {
             val database = QuranDatabase.getInstance(it)
             val quranDao = database.quranDao()
+            //
             quranDao.showQuranIndexBySurah().asLiveData().observe(viewLifecycleOwner, { surahList ->
                 viewModel.setTotalAyahList(surahList)
                 Log.d("CHECKDATA", surahList.size.toString())

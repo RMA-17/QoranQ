@@ -1,10 +1,14 @@
 package com.rmaproject.myqoran.ui.quran.read.surah
 
+import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
+import android.text.style.AbsoluteSizeSpan
 import android.text.style.ClickableSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.SuperscriptSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -114,6 +118,8 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
                     }
                 }
                 spannable.setSpan(clickableOpen, matcher.start(), matcher.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                spannable.setSpan(RelativeSizeSpan(0.8F), matcher.start(), matcher.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                spannable.setSpan(SuperscriptSpan(), matcher.start(), matcher.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE)
             }
             binding.translate.movementMethod = LinkMovementMethod.getInstance()
             binding.translate.setText(spannable, TextView.BufferType.SPANNABLE)

@@ -15,8 +15,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.data.QuranDatabase
 import com.rmaproject.myqoran.databinding.FragmentQuranIndexByJozzBinding
-import com.rmaproject.myqoran.model.Quran
-import com.rmaproject.myqoran.ui.quran.indexby.surah.QuranIndexAdapterSurah
 import com.rmaproject.myqoran.ui.quran.read.surah.FragmentQuranRead
 
 class QuranIndexFragmentByJozz : Fragment(R.layout.fragment_quran_index_by_jozz) {

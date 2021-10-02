@@ -32,6 +32,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         //Dengan tanpa ViewBinding
         val textusername:TextView = view.findViewById(R.id.txt_username)
+        textusername.setText("Raka M.A")
         //Dengan ViewBinding
         bindings.txtAyahCounter.text = "Ayat 1"
         //Bisa juga dijadikan variable
