@@ -12,4 +12,7 @@
     <string name="menu_about">About Us</string>
     <string name="title_profile">Profile\\</string>
     <string name="title_menu_chat">Chat sekarang</string>
+    <string name="menu_settings">Settings</string>
+    <string name="LIGHTVALUE">LIGHT</string>
+    <string name="LISTPREFERENCEVALUE">LISTPREFERENCEVALUE</string>
 </resources>

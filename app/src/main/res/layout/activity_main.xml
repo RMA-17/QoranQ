@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 app:title="List Surah"
                 app:titleTextColor="@color/material_on_surface_emphasis_high_type"
-                style="@style/ThemeOverlay.MaterialComponents.Toolbar.Surface"
+                style="@style/Widget.MaterialComponents.Toolbar.Surface"
                 app:menu="@menu/search_surah"
                 app:titleCentered="true"
                 app:navigationIcon="@drawable/menu"
@@ -60,5 +60,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer">
+
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

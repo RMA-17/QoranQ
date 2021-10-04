@@ -42,7 +42,8 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="0dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:layout_marginStart="8dp"
@@ -58,7 +59,7 @@
                 android:textSize="20sp"
                 android:layout_height="match_parent"/>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:orientation="horizontal"
                 android:layout_height="match_parent">
                 <TextView
@@ -84,7 +85,7 @@
                     android:text="Al-Fatihah 7"
                     android:textSize="18sp"
                     android:layout_height="wrap_content"
-                    android:layout_width="match_parent"/>
+                    android:layout_width="wrap_content"/>
             </LinearLayout>
 
         </LinearLayout>

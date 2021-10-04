@@ -2,18 +2,18 @@ package com.rmaproject.myqoran
 
 import android.os.Bundle
 import android.view.Menu
-import android.widget.SearchView
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.rmaproject.myqoran.data.QuranDatabase
+import com.google.android.material.navigation.NavigationView
 import com.rmaproject.myqoran.databinding.ActivityMainBinding
+import com.rmaproject.myqoran.ui.settings.ThemePreferences
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private val binding:ActivityMainBinding by viewBinding(R.id.drawer_layout)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+//        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+//            setTheme(R.style.Theme_MyQoran)
+//        } else {
+//            setTheme(R.style.Theme_MyQoran)
+//        }
+        checkTheme()
         super.onCreate(savedInstanceState)
 
 //        binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,13 +41,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_give_rating, R.id.nav_about
+                R.id.nav_home, R.id.nav_give_rating, R.id.nav_about, R.id.nav_settings
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
 
+
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -68,5 +75,17 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+    fun checkTheme(){
+        when (ThemePreferences(this).darkMode){
+            0 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                delegate.applyDayNight()
+            }
+            1 -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                delegate.applyDayNight()
+            }
+        }
     }
 }

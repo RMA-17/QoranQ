@@ -79,7 +79,7 @@
                 android:layout_alignParentEnd="true"
                 android:fontFamily="@font/utsmanichafs"
                 android:gravity="center_vertical"
-                android:maxLength="40"
+                android:maxLength="50"
                 android:maxLines="1"
                 android:text="الفاتحة"
                 android:textColor="?colorPrimary"

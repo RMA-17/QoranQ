@@ -116,21 +116,38 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
             findNavController().navigate(R.id.action_nav_read_quran_to_buttomSheet, bundle)
 
         }
-        adapter.playMurottalListener = { quran, position->
+        adapter.playMurottalListener = { quran, position ->
+            val audio = SongInfo()
             val numberofSurah = String.format("%03d", quran.surahNumber)
             val ayatNumber = String.format("%03d",quran.AyahNumber)
             val url = "https://archive.org/download/quran-every-ayah/Mishary%20Rashid%20Alafasy.zip/$numberofSurah$ayatNumber.mp3"
-            val audio = SongInfo()
+            audio.artist = "Mishary Rashid Alafasy"
             audio.songId = "$numberofSurah$ayatNumber"
             audio.songUrl = url
-            audio.artist = "Mishary Rashid Alafasy"
             audio.songName = "${quran.SurahName_en} : ${quran.AyahNumber}"
             audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
-            StarrySky.with().playMusicByInfo(audio)
-            /*
-            Code writen by Raka M.A
-             */
+            Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
             StarrySky.with().setRepeatMode(RepeatMode.REPEAT_MODE_NONE, isLoop = false)
+            StarrySky.with().playMusicByInfo(audio)
+
+        }
+        adapter.playAllAyahClickListener = { quran, totalAyat ->
+            val audioList = mutableListOf<SongInfo>()
+            for (i in 1..totalAyat) {
+                val audio = SongInfo()
+                val numberofSurah = String.format("%03d", quran.surahNumber)
+                val ayatNumber = String.format("%03d", i)
+                val url = "https://archive.org/download/quran-every-ayah/Mishary%20Rashid%20Alafasy.zip/$numberofSurah$ayatNumber.mp3"
+                audio.artist = "Mishary Rashid Alafasy"
+                audio.songId = "$numberofSurah$ayatNumber"
+                audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
+                audio.songUrl = url
+                audio.songName = "${quran.SurahName_en} : ${quran.AyahNumber}"
+                audioList.add(audio)
+            }
+            val startAudio = quran.AyahNumber!! -1
+            StarrySky.with().setRepeatMode(RepeatMode.REPEAT_MODE_NONE, isLoop = false)
+            StarrySky.with().playMusic(audioList, startAudio)
             Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
 
         }
@@ -148,3 +165,7 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         const val KEY_NAMA_SURAT = "NAMASURAT"
     }
 }
+
+/*
+            Code writen by Raka M.A
+             */

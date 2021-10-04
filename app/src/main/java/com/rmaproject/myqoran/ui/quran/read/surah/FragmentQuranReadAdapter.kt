@@ -30,6 +30,7 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
     var copyOnclickListener:((Quran, Int) -> Unit)? = null
     var footNoteOnClickListener:((Quran) -> Unit)? = null
     var playMurottalListener:((Quran, Int) -> Unit)? = null
+    var playAllAyahClickListener:((Quran, Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranReadViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ayat, parent, false)
@@ -42,7 +43,9 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
         val totalAyah = totalAyah[surahNumber - 1]
         holder.footNoteTracker(holder.itemView, ayat, footNoteOnClickListener)
         holder.bindView(ayat, totalAyah, position)
-
+        holder.binding.playAllayah.setOnClickListener {
+            playAllAyahClickListener?.invoke(ayat, totalAyah)
+        }
         holder.binding.playMurottal.setOnClickListener {
             playMurottalListener?.invoke(ayat, position)
         }
@@ -52,6 +55,7 @@ class FragmentQuranReadAdapter(private val ayatList:List<Quran>,
         holder.binding.itemCopy.setOnClickListener {
             copyOnclickListener?.invoke(ayat, position)
         }
+
 
     }
 

@@ -22,6 +22,7 @@ class QuranApplication : Application() {
             }
             pendingIntentMode { NotificationConfig.MODE_BROADCAST }
         }
+
         StarrySky.init(this)
             .setNotificationType(INotification.SYSTEM_NOTIFICATION)
             .setNotificationConfig(notificationConfig)

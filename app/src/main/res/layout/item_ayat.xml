@@ -22,18 +22,42 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/namaSurat"
-                android:layout_marginTop="20dp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:text="Al-Fatihah"
-                android:layout_gravity="center"
-                android:textColor="@color/material_on_primary_emphasis_high_type"
-                android:textSize="35sp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/namaSurat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Al-Fatihah"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
+                    android:textSize="35sp" />
+
+                <ImageView
+                    android:id="@+id/playAllayah"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_outline_play_arrow_24"
+                    app:tint="@color/material_on_primary_emphasis_high_type" />
+            </RelativeLayout>
             <TextView
                 android:id="@+id/artiSurat"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:text="Pembukaan"
                 android:layout_marginTop="10dp"
@@ -42,7 +66,6 @@
                 android:textSize="20sp"
                 android:gravity="center"
                 android:layout_height="wrap_content"/>
-
 <!--            <View-->
 <!--                android:layout_marginTop="12dp"-->
 <!--                android:layout_width="300dp"-->
