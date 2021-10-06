@@ -22,6 +22,8 @@ _This application still on development and full of bugs,
 Bugs and development list:_
 
 - [X] Ayah numbers that are inverted, Example: 12 written in arab 21
-- [ ] Can't show the last ayah on the page
+- [X] Can't show the last ayah on the page
 - [X] Play button still not working
 - [X] App icon not added
+- [ ] Search still be implemented
+- [ ] Login fragment still not added
