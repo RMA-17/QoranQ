@@ -27,4 +27,4 @@ Bugs and development list:_
 - [X] App icon not added
 - [ ] Search still be implemented
 - [ ] Login fragment still not added
-- [ ] Change Color accent still buggy, especially in HomeFragment header
+- [X] Change Color accent still buggy, especially in HomeFragment header
