@@ -25,6 +25,5 @@ Bugs and development list:_
 - [X] Can't show the last ayah on the page
 - [X] Play button still not working
 - [X] App icon not added
-- [ ] Search still be implemented
-- [ ] Login fragment still not added
+- [X] Search still be implemented
 - [X] Change Color accent still buggy, especially in HomeFragment header
