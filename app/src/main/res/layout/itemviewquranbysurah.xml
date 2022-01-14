@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="?selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -16,6 +17,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:orientation="vertical"
+            android:layout_marginStart="10dp"
             android:layout_weight="2"
             android:layout_height="match_parent">
             <ImageView
@@ -38,16 +40,17 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
-                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textColor="#FFF"
                 android:textSize="16sp" />
         </RelativeLayout>
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="240dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_height="wrap_content">
             <TextView
+                android:fontFamily="@font/lato_regular"
                 android:id="@+id/surahnameEN"
                 android:layout_marginTop="10dp"
                 android:layout_width="180dp"
@@ -57,36 +60,35 @@
                 android:textSize="22sp"
                 android:layout_height="match_parent"/>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginStart="10dp"
                 android:layout_height="match_parent">
                 <TextView
+                    android:fontFamily="@font/nunito_regular"
                     android:id="@+id/turunDi"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/material_on_background_emphasis_medium"
-                    android:text="Meccan and Madinan"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
+                    android:text="Meccan"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"/>
                 <TextView
                     android:id="@+id/dots"
                     android:layout_width="wrap_content"
                     android:text="•"
-                    android:layout_marginStart="10dp"
-                    android:textSize="20sp"
-                    android:layout_weight="3"
+                    android:layout_marginStart="4dp"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:fontFamily="@font/nunito_regular"
                     android:id="@+id/ayatTotal"
-                    android:layout_weight="8"
                     android:textColor="@color/material_on_background_emphasis_medium"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="4dp"
                     android:layout_width="wrap_content"
                     android:textSize="18sp"
                     android:text="286 Ayat"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"
+                    />
             </LinearLayout>
 
         </LinearLayout>
@@ -98,10 +100,11 @@
             <ImageView
                 android:id="@+id/meccaormadina"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="35dp"
                 android:layout_alignTop="@id/surahNameArabic"
                 android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/ic_mecca"
                 app:tint="?colorControlNormal" />
 
@@ -115,7 +118,7 @@
                 android:gravity="center"
                 android:text="الفاتحة"
                 android:textColor="?colorPrimary"
-                android:textSize="25sp" />
+                android:textSize="32sp" />
 
         </RelativeLayout>
 
@@ -127,8 +130,8 @@
         app:dividerThickness="1dp"
         android:layout_height="1dp"/>
 
-
 </LinearLayout>
+
 
 
     <!--    This layout was created by Raka M.A-->

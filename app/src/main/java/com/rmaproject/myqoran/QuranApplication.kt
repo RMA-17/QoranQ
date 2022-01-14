@@ -3,9 +3,11 @@ package com.rmaproject.myqoran
 import android.app.Application
 import android.app.Notification
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import com.lzx.starrysky.StarrySky
 import com.lzx.starrysky.notification.INotification
 import com.lzx.starrysky.notification.NotificationConfig
+import com.rmaproject.myqoran.ui.settings.ThemePreferences
 
 class QuranApplication : Application() {
 

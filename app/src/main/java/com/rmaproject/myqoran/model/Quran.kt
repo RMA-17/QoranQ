@@ -19,6 +19,7 @@ data class Quran(
     @ColumnInfo(name = "aya_text_emlaey") val textQuranSearch:String? = "",
     @ColumnInfo(name = "sora_name_id") val SurahName_id:String? = "",
     @ColumnInfo(name = "sora_descend_place") val turunSurah:String? = "",
+    @ColumnInfo(name = "sora_name_emlaey") val textSurahSearch:String? = "",
     val translation:String? = "",
     val footnotes:String? = ""
 )

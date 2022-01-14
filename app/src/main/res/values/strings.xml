@@ -3,16 +3,17 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">smk_raka@rbs.sch.id</string>
+    <string name="nav_header_subtitle">By RMA Projects</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_rating">Rate Us</string>
-    <string name="menu_about">About Us</string>
+    <string name="menu_rating">"Nilai Kami"</string>
+    <string name="menu_about">Tentang Kami</string>
     <string name="title_profile">Profile\\</string>
     <string name="title_menu_chat">Chat sekarang</string>
     <string name="menu_settings">Settings</string>
     <string name="LIGHTVALUE">LIGHT</string>
     <string name="LISTPREFERENCEVALUE">LISTPREFERENCEVALUE</string>
+    <string name="welcomelabel">Welcome To MyQoran</string>
 </resources>

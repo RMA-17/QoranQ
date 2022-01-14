@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_outline_stop_24"
+        android:id="@+id/stopAyahButton"
+        android:title="Stop Ayah"/>
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_outline_skip_previous_24"
+        android:id="@+id/previousAyahBtn"
+        android:title="Previous Ayah"/>
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_outline_play_arrow_24"
+        android:id="@+id/pauseplayAyahButton"
+        android:title="Play Ayah"/>
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_outline_skip_next_24"
+        android:id="@+id/nextAyahButton"
+        android:title="Next Ayah"/>
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_outline_repeat_24"
+        android:id="@+id/repeatAyahButton"
+        android:title="Repeat"/>
+</menu>

@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_nav_home_to_nav_read_quran"
             app:destination="@id/nav_read_quran" />
+        <action
+            android:id="@+id/action_nav_home_to_searchFragmentSurah"
+            app:destination="@id/searchFragmentSurah" />
+        <action
+            android:id="@+id/action_nav_home_to_fragmentBookmark"
+            app:destination="@id/fragmentBookmark" />
     </fragment>
 
     <fragment
@@ -36,6 +42,9 @@
         android:label="@string/menu_settings"
         tools:layout="@layout/settings_fragment">
 
+        <action
+            android:id="@+id/action_nav_settings_to_bottomSheetColorChanger"
+            app:destination="@id/bottomSheetColorChanger" />
     </fragment>
 
     <fragment
@@ -47,15 +56,66 @@
         <action
             android:id="@+id/action_nav_read_quran_to_buttomSheet"
             app:destination="@id/buttomSheet" />
+        <action
+            android:id="@+id/action_nav_read_quran_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <dialog
-        tools:layout="@layout/buttom_sheet"
+        tools:layout="@layout/bottom_sheet_footnotes"
         android:id="@+id/buttomSheet"
-        android:name="com.rmaproject.myqoran.ui.bottomsheet.ButtomSheet"
+        android:name="com.rmaproject.myqoran.ui.bottomsheet.BottomSheetFootnotes"
         android:label="ButtomSheet" />
     <dialog
         android:id="@+id/buttomSheetLicense"
         tools:layout="@layout/buttomsheetlicense"
-        android:name="com.rmaproject.myqoran.ui.bottomsheet.ButtomSheetLicense"
+        android:name="com.rmaproject.myqoran.ui.bottomsheet.BottomSheetLicense"
         android:label="ButtomSheetLicense" />
+    <fragment
+        tools:layout="@layout/search_layout_read"
+        android:id="@+id/searchFragment"
+        android:name="com.rmaproject.myqoran.ui.search.by.ayah.SearchFragmentRead"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_buttomSheet"
+            app:destination="@id/buttomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragmentSurah"
+        tools:layout="@layout/search_layout_surah"
+        android:name="com.rmaproject.myqoran.ui.search.by.surah.SearchFragmentSurah"
+        android:label="SearchFragmentSurah" >
+        <action
+            android:id="@+id/action_searchFragmentSurah_to_nav_read_quran"
+            app:destination="@id/nav_read_quran" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/bookmark_layout"
+        android:id="@+id/fragmentBookmark"
+        android:name="com.rmaproject.myqoran.ui.quran.bookmark.FragmentBookmark"
+        android:label="FragmentBookmark" >
+        <action
+            android:id="@+id/action_fragmentBookmark_to_nav_read_quran"
+            app:destination="@id/nav_read_quran" />
+    </fragment>
+    <dialog
+        tools:layout="@layout/colorchange_settings"
+        android:id="@+id/bottomSheetColorChanger"
+        android:name="com.rmaproject.myqoran.ui.bottomsheet.BottomSheetColorChanger"
+        android:label="BottomSheetColorChanger" />
+    <fragment
+        android:id="@+id/nav_jadwal_sholat"
+        tools:layout="@layout/jadwal_sholat_layout"
+        android:name="com.rmaproject.myqoran.ui.jadwalsholat.JadwalSholatFragment"
+        android:label="JadwalSholatFragment" />
+    <fragment
+        android:id="@+id/nav_qibla"
+        tools:layout="@layout/qibla_finder_webview_layout"
+        android:name="com.rmaproject.myqoran.ui.qiblafinder.QiblaFinderFragment"
+        android:label="QiblaFinderFragment" />
+    <fragment
+        tools:layout="@layout/tajweed_layout"
+        android:id="@+id/nav_help"
+        android:name="com.rmaproject.myqoran.ui.tajwidhelp.HelpWithTajwidFragment"
+        android:label="Panduan warna Tajwid" />
+
 </navigation>

@@ -1,46 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="100dp">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_margin="16dp"
+            android:orientation="horizontal"
             android:layout_height="wrap_content">
-            <TextView
-                android:textColor="@color/material_on_background_emphasis_high_type"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="Dark Theme"
-                android:textSize="30sp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textColor="@color/material_on_background_emphasis_medium"
-                android:textSize="20sp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="6dp"
+                        android:layout_weight="0.2"
+                        android:layout_width="45dp"
+                        android:src="@drawable/ic_round_menu_book_24"
+                        android:layout_height="match_parent"/>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textColor="@color/material_on_background_emphasis_high_type"
+                            android:layout_width="wrap_content"
+                            android:text="Mode Fokus Baca"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="26sp"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:fontFamily="@font/nunito_regular"
+                            android:textColor="@color/material_on_background_emphasis_medium"
+                            android:textSize="16sp"
+                            android:layout_width="wrap_content"
+                            android:text="Hilangkan translate dan menu bar agar fokus membaca"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:text="Set theme"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="4"
-            android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/switchtheme"
-                android:checked="false"
-                android:layout_marginEnd="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchReadMode"
+                    android:checked="false"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
         </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            app:dividerThickness="1dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_format_size_24"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:layout_marginStart="6dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/material_on_background_emphasis_high_type"
+                        android:layout_width="match_parent"
+                        android:text="Ukuran Font"
+                        android:fontFamily="@font/lato_regular"
+                        android:textSize="26sp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:fontFamily="@font/nunito_regular"
+                        android:textColor="@color/material_on_background_emphasis_medium"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:text="Atur ukuran font"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.slider.Slider
+                    app:labelBehavior="gone"
+                    android:id="@+id/resizeSlider"
+                    android:valueFrom="35"
+                    android:valueTo="50"
+                    android:layout_width="match_parent"
+                    app:thumbColor="?colorPrimary"
+                    app:trackColor="?sliderTrackPrimaryColor"
+                    android:contentDescription="Resize Font"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/previewtext"
+            android:layout_width="match_parent"
+            android:text="Preview"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginStart="14dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textPreview"
+            android:textColor="@color/material_on_background_emphasis_high_type"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:textSize="35sp"
+            android:text="بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            app:dividerThickness="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/changeQari"
+            android:layout_margin="16dp"
+            android:background="?selectableItemBackground"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:padding="6dp"
+                android:layout_width="50dp"
+                android:src="@drawable/ic_baseline_volume_up_24"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_marginStart="4dp"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/material_on_background_emphasis_high_type"
+                    android:layout_width="match_parent"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Ganti Qari'"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:fontFamily="@font/nunito_regular"
+                    android:id="@+id/currentQariTracker"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:text="Current: Mishari Rasyid Alafasy"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            app:dividerThickness="1dp"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:id="@+id/changeColorListener"
+            android:layout_margin="16dp"
+            android:background="?selectableItemBackground"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:padding="6dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/colour_pallette"/>
+            <LinearLayout
+                android:layout_marginStart="4dp"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Ganti Aksen Warna"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/material_on_background_emphasis_high_type"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:fontFamily="@font/lato_regular"
+                    android:layout_width="match_parent"
+                    android:text="Ganti tema warna Aplikasi"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center"
+            app:dividerThickness="1dp"
+            android:layout_height="1dp"/>
     </LinearLayout>
 
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

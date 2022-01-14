@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.app.ShareCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -35,11 +36,11 @@ class AboutUsFragment : Fragment(R.layout.fragment_about) {
             startActivity(intent)
         }
         binding.copyMail.setOnClickListener {
-            val text = "rakamuhammadalhafidz12312@gmail.com"
-            val clipboard = requireActivity().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("Copy My Mail to Clipboard", text)
-            clipboard.setPrimaryClip(clip)
-            Toast.makeText(requireContext(), "Email berhasil ter-Copy", Toast.LENGTH_SHORT).show()
+            val testIntent = Intent(Intent.ACTION_VIEW)
+            val data =
+                Uri.parse("mailto:" + "rakamuhammadalhafidz12312@gmail.com")
+            testIntent.data = data
+            startActivity(testIntent)
         }
         binding.bukaLisensi.setOnClickListener {
             val text  = """GNU GENERAL PUBLIC LICENSE

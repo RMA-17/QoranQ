@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/CardView"
         android:layout_width="match_parent"
@@ -27,6 +26,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/lato_regular"
                     android:id="@+id/namaSurat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -38,26 +38,11 @@
                     android:text="Al-Fatihah"
                     android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:textSize="35sp" />
-
-                <ImageView
-                    android:id="@+id/playAllayah"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    android:background="?selectableItemBackground"
-                    android:src="@drawable/ic_outline_play_arrow_24"
-                    app:tint="@color/material_on_primary_emphasis_high_type" />
             </RelativeLayout>
             <TextView
                 android:id="@+id/artiSurat"
                 android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
                 android:layout_width="match_parent"
                 android:text="Pembukaan"
                 android:layout_marginTop="10dp"
@@ -87,6 +72,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:fontFamily="@font/nunito_regular"
                     android:id="@+id/turunDi"
                     android:layout_gravity="center"
                     android:gravity="end"
@@ -98,6 +84,7 @@
                     android:text="Makiyyah"
                     android:layout_height="match_parent"/>
                 <TextView
+                    android:fontFamily="@font/nunito_regular"
                     android:id="@+id/ayatTotal"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/material_on_primary_emphasis_medium"
@@ -121,12 +108,25 @@
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="200dp"
+        android:id="@+id/playAllAyah"
+        android:layout_gravity="center"
+        app:backgroundTint="?colorPrimary"
+        android:text="Putar semua ayat"
+        android:textAllCaps="false"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_outline_play_arrow_24"
+        android:layout_marginHorizontal="20dp"
+        app:elevation="8dp"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
+        android:id="@+id/toolBarAyah"
         android:layout_margin="10dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="12dp"
         android:backgroundTint="?primary_50"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -135,7 +135,7 @@
             android:layout_height="56dp">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_weight="4"
+                android:layout_weight="7"
                 android:layout_marginTop="2dp"
                 android:layout_height="50dp">
                 <ImageView
@@ -168,6 +168,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:visibility="invisible"
                     android:background="?selectableItemBackground"
                     android:id="@+id/itemCopy"
                     android:layout_width="match_parent"
@@ -178,6 +179,7 @@
                     android:padding="14dp"
                     app:tint="?colorPrimary" />
                 <ImageView
+                    android:visibility="invisible"
                     android:id="@+id/playMurottal"
                     android:background="?selectableItemBackground"
                     android:layout_gravity="center"
@@ -188,6 +190,7 @@
                     android:layout_height="match_parent"
                     app:tint="?colorPrimary" />
                 <ImageView
+                    android:visibility="invisible"
                     android:background="?selectableItemBackground"
                     android:id="@+id/item_Share"
                     android:layout_gravity="center"
@@ -196,6 +199,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="12dp"
+                    app:tint="?colorPrimary" />
+
+                <ImageView
+                    android:visibility="invisible"
+                    android:background="?selectableItemBackground"
+                    android:id="@+id/saveLastReadBookmark"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_bookmark_border_24"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    app:tint="?colorPrimary" />
+                <ImageView
+                    android:id="@+id/moreOptionsBtn"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/ic_baseline_more_vert_24"
+                    android:layout_height="match_parent"
                     app:tint="?colorPrimary" />
 
             </LinearLayout>
@@ -222,8 +244,9 @@
             android:layout_margin="10dp"
             android:id="@+id/translate"
             android:layout_marginTop="10dp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_regular"
             android:layout_width="match_parent"
             android:text="Segala puji bagi Alloh Rabb Semesta Alam"
             android:layout_height="wrap_content"/>
@@ -233,6 +256,7 @@
         android:layout_width="match_parent"
         android:layout_margin="20dp"
         android:layout_gravity="center"
+        android:id="@+id/divider"
         app:dividerThickness="1dp"
         android:layout_marginTop="18dp"
         android:layout_height="1dp"/>

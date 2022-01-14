@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    android:backgroundTint="?primary_50"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="56dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_marginTop="2dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/namaSurat"
+                android:fontFamily="@font/lato_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:singleLine="true"
+                android:text="Al-Mumtahanah"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="18sp" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:id="@+id/ayahCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/namaSurat"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:background="?selectableItemBackground"
+                android:id="@+id/itemCopy"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_content_copy_24"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                app:tint="?colorPrimary" />
+            <ImageView
+                android:background="?selectableItemBackground"
+                android:id="@+id/item_Share"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_outline_share_24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="14dp"
+                app:tint="?colorPrimary" />
+            <ImageView
+                android:background="?selectableItemBackground"
+                android:id="@+id/saveLastReadBookmark"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_bookmark_border_24"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                app:tint="?colorPrimary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+<LinearLayout
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:layout_marginTop="15dp"
+android:layout_height="wrap_content">
+<TextView
+    android:textDirection="rtl"
+    android:id="@+id/ayat_quran"
+    android:layout_width="match_parent"
+    android:textSize="35sp"
+    android:layout_margin="10dp"
+    android:textColor="@color/material_on_background_emphasis_high_type"
+    android:fontFamily="@font/utsmanichafs"
+    android:text="الحمدلله رب العالمين"
+    android:layout_height="wrap_content"/>
+<TextView
+    android:layout_margin="10dp"
+    android:id="@+id/translate"
+    android:layout_marginTop="10dp"
+    android:textSize="18sp"
+    android:fontFamily="@font/montserrat_regular"
+    android:layout_marginStart="5dp"
+    android:layout_width="match_parent"
+    android:text="Segala puji bagi Alloh Rabb Semesta Alam"
+    android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        app:dividerThickness="1dp"
+        android:layout_marginTop="18dp"
+        android:layout_height="1dp"/>
+</LinearLayout>

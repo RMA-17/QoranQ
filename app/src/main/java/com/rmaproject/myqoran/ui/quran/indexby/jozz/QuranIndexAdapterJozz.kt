@@ -7,12 +7,13 @@ import android.view.ViewGroup
              */
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.l4digital.fastscroll.FastScroller
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.databinding.ItemviewquranbyjozzBinding
 import com.rmaproject.myqoran.model.Jozz
 import com.rmaproject.myqoran.ui.quran.indexby.jozz.QuranIndexAdapterJozz.QuranIndexJozzViewHolder
 
-class QuranIndexAdapterJozz(val jozzList:List<Jozz>, val clickListener:(Jozz) -> Unit): RecyclerView.Adapter<QuranIndexJozzViewHolder>() {
+class QuranIndexAdapterJozz(val jozzList:List<Jozz>, val clickListener:(Jozz) -> Unit): RecyclerView.Adapter<QuranIndexJozzViewHolder>(), FastScroller.SectionIndexer {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranIndexJozzViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.itemviewquranbyjozz, parent, false)
@@ -39,7 +40,14 @@ class QuranIndexAdapterJozz(val jozzList:List<Jozz>, val clickListener:(Jozz) ->
             binding.namaJuz.text = "Juz ${jozz.juzNumber}"
             binding.ayaText.text = jozz.TextQuran
             binding.jozzcounter.text = jozz.juzNumber.toString()
+            binding.ayahNumberTxt.text = jozz.nomorAyah.toString()
         }
 
+    }
+
+    override fun getSectionText(position: Int): CharSequence {
+        val jozz = jozzList[position]
+        val popupText = "Juz ${jozz.juzNumber}"
+        return popupText
     }
 }

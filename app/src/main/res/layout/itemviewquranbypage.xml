@@ -38,7 +38,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
-                android:textColor="@color/material_on_primary_emphasis_high_type"
+                android:textColor="#FFF"
                 android:textSize="14sp" />
         </RelativeLayout>
         <LinearLayout
@@ -50,6 +50,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content">
             <TextView
+                android:fontFamily="@font/lato_regular"
                 android:id="@+id/halamanLocator"
                 android:layout_marginTop="10dp"
                 android:layout_width="180dp"
@@ -64,6 +65,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:maxLength="25"
+                    android:fontFamily="@font/nunito_regular"
                     android:id="@+id/firstsurahLine"
                     android:layout_marginStart="10dp"
                     android:textColor="@color/material_on_background_emphasis_medium"
@@ -78,6 +80,7 @@
                     android:textSize="20sp"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:fontFamily="@font/nunito_regular"
                     android:maxLength="25"
                     android:id="@+id/lastSurahLine"
                     android:layout_marginStart="10dp"

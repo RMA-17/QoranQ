@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#BA68C8</color>
-    <color name="purple_500">#CE2CF6</color>
+    <color name="purple_500">#9c4dcc</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
@@ -9,8 +9,26 @@
     <color name="white">#FFFFFFFF</color>
     <color name="divider_light">#1F000000</color>
     <color name="divider_dark">#1FFFFFFF</color>
-    <color name="primary_light_50">#121212</color>
-    <color name="primary_dark_50">#F3E5F5</color>
-    <color name="primary_green_dark">#81C784</color>
-    <color name="primary_green_light">#4CAF50</color>
+    <color name="primary_light_50">#F3E5F5</color>
+    <color name="primary_dark_50">#121212</color>
+    <color name="greenCustom_dark">#81C784</color>
+    <color name="greenCustom_light">#4CAF50</color>
+    <color name="primary_blue_dark_text">#005662</color>
+    <color name="primary_blue_light_text">#00838f</color>
+    <color name="primary_blue_light">#0E2392</color>
+    <color name="primary_blue_dark">#00838f</color>
+    <color name="primary_green_dark">#4bc158</color>
+    <color name="primary_green_light">#1B5E20</color>
+    <color name="primary_green_light_text">#4bc158</color>
+    <color name="primary_green_dark_text">#1B5E20</color>
+    <color name="primary_red_light">#E53935</color>
+    <color name="primary_red_dark">#cf6679</color>
+    <color name="primary_red_text">#cf6679</color>
+    <color name="primary_red_dark_text">#E53935</color>
+    <color name="color_qalqala">#7C4DFF</color>
+    <color name="color_iqlab">#40C4FF</color>
+    <color name="color_idgham">#FF5252</color>
+    <color name="color_ikhfa">#00E676</color>
+    <color name="color_ghunna">#FF4081</color>
+    <color name="color_idghamwo">#FF5722</color>
 </resources>

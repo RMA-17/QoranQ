@@ -5,6 +5,5 @@
         android:id="@+id/searchButton"
         app:showAsAction="always"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search Surah"
-        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+        android:title="Search Surah"/>
 </menu>

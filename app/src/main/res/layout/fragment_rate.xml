@@ -4,100 +4,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_marginTop="40dp"
-            android:id="@+id/starCenter"
-            android:layout_width="60dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_baseline_star_24"
-            android:layout_height="60dp"
-            app:tint="?primary_green" />
-
-        <ImageView
-            android:layout_marginTop="40dp"
-            android:layout_toEndOf="@+id/starCenter"
-            android:layout_width="60dp"
-            android:src="@drawable/ic_baseline_star_24"
-            android:layout_height="60dp"
-            app:tint="?primary_green" />
-
-        <ImageView
-            android:id="@+id/stickman"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/stickman" />
-
-        <ImageView
-            android:layout_width="56dp"
-            android:padding="10dp"
-            android:layout_margin="6dp"
-            android:layout_height="56dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_baseline_close_24" />
+            android:id="@+id/emoji_img"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:contentDescription="rating by Randomhero from the Noun Project"
+            android:src="@drawable/ic_noun_rating_1293605"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?colorOnBackground" />
 
         <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_below="@+id/stickman"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/emoji_img">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Excellent!"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Menyukai Produk kami?"
                 android:textColor="@color/material_on_background_emphasis_high_type"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
+
             <RatingBar
-                android:progressTint="?primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:numStars="5"
                 android:progressBackgroundTint="@null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:progressTint="?attr/greenCustom" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="Thanks for Loving Us!"
+                android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Berikan saran dan pendapat anda!"
                 android:textColor="@color/material_on_background_emphasis_high_type"
-                android:textSize="28sp"
-                android:layout_height="wrap_content"/>
+                android:textSize="28sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:text="Spread to World by rating us on PlayStore!"
+                android:text="Dengan nilai kami, anda secara tidak langsung beramal jariyyah"
                 android:textColor="@color/material_on_background_emphasis_medium"
                 android:textSize="20sp" />
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="120dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                app:cornerRadius="50dp"
-                android:layout_marginTop="30dp"
-                android:text="Rate Us"
-                android:backgroundTint="?primary_green"
+                android:layout_width="145dp"
+                android:layout_height="65dp"
                 android:layout_gravity="center"
-                android:layout_height="65dp"/>
+                android:layout_marginTop="16dp"
+                android:backgroundTint="?attr/greenCustom"
+                android:gravity="center"
+                android:text="Nilai Kami"
+                android:id="@+id/rateUsButton"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:cornerRadius="50dp" />
 
 
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

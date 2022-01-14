@@ -16,5 +16,4 @@ data class Surah (
     @ColumnInfo(name = "ayah_total") val numberOfAyah:Int? = 0,
     @ColumnInfo(name = "sora_descend_place") val turunSurah:String? = "",
     @ColumnInfo(name = "sora_name_id") val surahNameID:String? = ""
-
 )

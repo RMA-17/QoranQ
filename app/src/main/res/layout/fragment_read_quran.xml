@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerVIew"
+    <RelativeLayout
         android:layout_width="match_parent"
-        tools:listitem="@layout/item_ayat"
-        android:layout_height="wrap_content">
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+        <com.l4digital.fastscroll.FastScrollRecyclerView
+            android:id="@+id/recyclerViewRead"
+            android:layout_width="match_parent"
+            app:bubbleSize="small"
+            tools:listitem="@layout/item_ayat"
+            android:layout_height="wrap_content">
+        </com.l4digital.fastscroll.FastScrollRecyclerView>
+    </RelativeLayout>
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:id="@+id/bottomAppbar"
+        android:layout_gravity="bottom"
+        app:hideOnScroll="true"
+        app:backgroundTint="?primary_50"
+        android:minHeight="64dp"
+        app:elevation="16dp"
+        app:fabAlignmentMode="end"
+        app:fabAnimationMode="slide"
+        style="@style/Widget.MaterialComponents.BottomAppBar"
+        app:menu="@menu/bottom_bar_player_menu"
+        android:layout_height="wrap_content"/>
 
-</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="match_parent"
+        app:layout_anchor="@id/bottomAppbar"
+        android:id="@+id/fabClose"
+        app:fabSize="mini"
+        app:tint="#FFF"
+        app:elevation="12dp"
+        app:backgroundTint="?colorPrimary"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        android:backgroundTint="?colorPrimary"
+        android:layout_height="wrap_content"
+        app:animationMode="slide"
+        android:contentDescription="Close Navigation" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

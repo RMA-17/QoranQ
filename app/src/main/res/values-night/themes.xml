@@ -3,17 +3,122 @@
     <style name="Theme.MyQoran" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">#000</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorDivider">@color/divider_dark</item>
-        <item name="primary_50">@color/primary_light_50</item>
-        <item name="primary_green">@color/primary_green_dark</item>
+        <item name="primary_50">@color/primary_dark_50</item>
+        <item name="sliderTrackPrimaryColor">#784C7E</item>
+        <item name="greenCustom">@color/greenCustom_dark</item>
+        <item name="primaryBlueText">@color/primary_blue_dark_text</item>
+        <item name="primaryBlue">@color/primary_blue_dark</item>
+        <item name="primaryGreenText">@color/primary_green_dark_text</item>
+        <item name="primaryGreen">@color/primary_green_dark</item>
+        <item name="primaryRed">@color/primary_red_dark</item>
+        <item name="primaryRedText">@color/primary_red_dark_text</item>
+        <item name="primaryDefault">@color/purple_200</item>
         <!-- Secondary brand color. -->
+        <item name="clockTrackColor">#F701FF</item>
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+    </style>
+    <style name="Theme.MyQoran.Blue" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_blue_dark</item>
+        <item name="colorPrimaryVariant">#000</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorDivider">@color/divider_dark</item>
+        <item name="primary_50">@color/primary_dark_50</item>
+        <item name="sliderTrackPrimaryColor">#476C7C</item>
+        <item name="greenCustom">@color/primary_green_dark</item>
+        <item name="primaryBlueText">@color/primary_blue_dark_text</item>
+        <item name="primaryBlue">@color/primary_blue_dark</item>
+        <item name="primaryGreenText">@color/primary_green_dark_text</item>
+        <item name="primaryGreen">@color/primary_green_dark</item>
+        <item name="primaryRed">@color/primary_red_dark</item>
+        <item name="primaryRedText">@color/primary_red_dark_text</item>
+        <item name="primaryDefault">@color/purple_200</item>
+        <!-- Secondary brand color. -->
+        <item name="clockTrackColor">#0173FF</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+    </style>
+    <style name="Theme.MyQoran.Green" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_green_dark</item>
+        <item name="colorPrimaryVariant">#000</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorDivider">@color/divider_dark</item>
+        <item name="primary_50">@color/primary_dark_50</item>
+        <item name="sliderTrackPrimaryColor">#548157</item>
+        <item name="greenCustom">@color/greenCustom_dark</item>
+        <item name="primaryBlueText">@color/primary_blue_dark_text</item>
+        <item name="primaryBlue">@color/primary_blue_dark</item>
+        <item name="primaryGreenText">@color/primary_green_dark_text</item>
+        <item name="primaryGreen">@color/primary_green_dark</item>
+        <item name="primaryRed">@color/primary_red_dark</item>
+        <item name="primaryRedText">@color/primary_red_dark_text</item>
+        <item name="primaryDefault">@color/purple_200</item>
+        <!-- Secondary brand color. -->
+        <item name="clockTrackColor">#01FF2B</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+    </style>
+    <style name="Theme.MyQoran.Red" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_red_dark</item>
+        <item name="colorPrimaryVariant">#000</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="sliderTrackPrimaryColor">#77484F</item>
+        <item name="colorDivider">@color/divider_dark</item>
+        <item name="primary_50">@color/primary_dark_50</item>
+        <item name="greenCustom">@color/greenCustom_dark</item>
+        <item name="primaryBlueText">@color/primary_blue_dark_text</item>
+        <item name="primaryBlue">@color/primary_blue_dark</item>
+        <item name="primaryGreenText">@color/primary_green_dark_text</item>
+        <item name="primaryGreen">@color/primary_green_dark</item>
+        <item name="primaryRed">@color/primary_red_dark</item>
+        <item name="primaryRedText">@color/primary_red_dark_text</item>
+        <item name="primaryDefault">@color/purple_200</item>
+        <!-- Secondary brand color. -->
+        <item name="clockTrackColor">#FF1601</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+    </style>
+
+    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryDark">@color/purple_200</item>
+        <item name="colorAccent">?colorPrimary</item>
+        <item name="backgroundSplashColor">@color/primary_dark_50</item>
+        <item name="android:statusBarColor">#121212</item>
     </style>
 </resources>

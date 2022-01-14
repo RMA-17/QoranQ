@@ -1,10 +1,12 @@
 package com.rmaproject.myqoran.ui.quran.indexby.page
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.l4digital.fastscroll.FastScroller
 /*
             Code writen by Raka M.A
              */
@@ -13,11 +15,12 @@ import com.rmaproject.myqoran.databinding.ItemviewquranbypageBinding
 import com.rmaproject.myqoran.model.AyahTerakhirFinder
 import com.rmaproject.myqoran.model.Page
 import com.rmaproject.myqoran.ui.quran.indexby.page.QuranIndexAdapterPage.QuranIndexViewHolder
+import com.rmaproject.myqoran.ui.settings.LastReadPreferences
 
 class QuranIndexAdapterPage(val pageList:List<Page>, val ayahTerakhir:List<AyahTerakhirFinder>,
                             val clickListener:(Page) -> Unit
 ) :
-    RecyclerView.Adapter<QuranIndexViewHolder>() {
+    RecyclerView.Adapter<QuranIndexViewHolder>(), FastScroller.SectionIndexer {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuranIndexViewHolder {
@@ -49,5 +52,11 @@ class QuranIndexAdapterPage(val pageList:List<Page>, val ayahTerakhir:List<AyahT
 
         }
 
+    }
+
+    override fun getSectionText(position: Int): CharSequence {
+        val page = pageList[position]
+        val pageList = "Halaman ${page.page}"
+        return pageList
     }
 }

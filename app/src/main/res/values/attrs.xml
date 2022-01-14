@@ -2,5 +2,15 @@
 <resources>
     <attr name="colorDivider" format="color"/>
     <attr name="primary_50" format="color"/>
-    <attr name="primary_green" format="color"/>
+    <attr name="greenCustom" format="color"/>
+    <attr name="primaryBlueText" format="color"/>
+    <attr name="primaryBlue" format="color"/>
+    <attr name="primaryGreenText" format="color"/>
+    <attr name="primaryGreen" format="color"/>
+    <attr name="primaryRedText" format="color"/>
+    <attr name="primaryRed" format="color"/>
+    <attr name="primaryDefault" format="color"/>
+    <attr name="sliderTrackPrimaryColor" format="color"/>
+    <attr name="clockTrackColor" format="color"/>
+    <attr name="backgroundSplashColor" format="color"/>
 </resources>

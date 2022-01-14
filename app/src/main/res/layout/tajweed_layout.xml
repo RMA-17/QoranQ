@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_idgham"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardIdghamBighunnah"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/idghamText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Idgham Bighunnah"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.486" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:cardElevation="0dp"
+                        android:id="@+id/tajweedInfoIdgham"
+                        app:cardCornerRadius="0dp"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="260dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Idgham bighunnah adalah hukum bacaan yang melebur dan disertai dengungan atau yang berarti memasukkan salah satu huruf nun mati atau tanwin ke dalam huruf sesudahnya dan lafal dari idgham bighunnah tersebut haruslah mendengung jika bertemu empat huruf yaitu Nun, Mim, Wau, Ya'." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:id="@+id/teksArabIdghamBi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="16dp"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:textSize="35dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_ikhfa"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardIkhfa"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+
+                        <TextView
+                            android:id="@+id/ikhfaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Ikhfa"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:cardElevation="0dp"
+                        android:id="@+id/tajweedInfoIkhfa"
+                        app:cardCornerRadius="0dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ikhfa adalah suatu hukum tajwid yang terjadi karena nun mati ( nun beharkat sukun ) atau tanwin bertemu dennga huruf ikhfa sehingga dibanca dengan sama-sama. Huruf ikhfa ada totalnya 15 huruf hijaiyyah. Huruf hijaiyyah yang termasuk dalam huruf ikhfa antara lain adalah jim, syin, shad, dhad dzal, sin, za, ta, tha, dal, fa, qaf, kaf, tsa, atau dza." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:id="@+id/teksIkhfa"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="36dp"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textSize="35dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_iqlab"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardIqlab"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+
+                        <TextView
+                            android:id="@+id/iqlabText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Iqlab"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:id="@+id/tajweedInfoIqlab"
+                        android:visibility="gone"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="0dp"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Iqlab artinya membalik atau menukar yaitu menukar bunyi huruf nun sukun atau tanwin menjadi bunyi huruf mim mati  disertai dengung.  Secara harfiah, Iqlab mempunyai arti menggantikan atau mengubah sesuatu dari bentuk aslinya." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:id="@+id/teksIqlab"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="36dp"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textSize="35dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_idghamwo"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardIdghamBilaghunnah"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+
+                        <TextView
+                            android:id="@+id/idghamBilagunnahText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Idgham Bilagunnah"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:id="@+id/tajweedInfoIdghamBilaGunnah"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="0dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Idgham Bilaghunnah artinya melebur tanpa dengung atau maksudnya memasukkan huruf nun mati atau tanwin ke dalam huruf sesudahnya tanpa disertai suara yang mendengung. Hukum bacaan tersebut berlaku jika nun atau tanwin bertemu huruf Lam dan Ra'." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:id="@+id/teksIdghamBl"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="36dp"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textSize="35dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_qalqala"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardQalqala"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+
+                        <TextView
+                            android:id="@+id/qalqalahText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Qalqalah"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:cardElevation="0dp"
+                        android:id="@+id/tajweedInfoQalqala"
+                        app:cardCornerRadius="0dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="210dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Qalqalah adalah memantulkan bunyi huruf tertentu karena sukun dengan mati asli, karena waqaf dengan dimatikan, dan tasydid/syiddah karena waqaf." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:id="@+id/teksQalqalah"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="36dp"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textSize="35dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardBackgroundColor="@color/color_ghunna"
+                app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/cardGunnah"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="24dp"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.487"
+                            app:tint="#FFF" />
+
+                        <TextView
+                            android:id="@+id/gunnahText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="Gunnah"
+                            android:textColor="#FFF"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        app:cardElevation="0dp"
+                        android:visibility="gone"
+                        android:id="@+id/tajweedInfoGunnah"
+                        app:cardCornerRadius="0dp"
+                        app:cardBackgroundColor="?attr/colorOnPrimary"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:textSize="16sp"
+                                android:textColor="?attr/colorOnBackground"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ghunnah adalah bacaan ilmu tajwid yang harus dibaca mendengung." />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:background="?selectableItemBackground"
+                                    android:textColor="@color/material_on_background_emphasis_high_type"
+                                    android:id="@+id/teksGunnah"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="36dp"
+                                    android:fontFamily="@font/utsmanichafs"
+                                    android:text="الحمدلله رب العالمين"
+                                    android:textSize="35dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

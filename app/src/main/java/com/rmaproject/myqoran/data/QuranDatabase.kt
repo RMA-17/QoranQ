@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.model.*
 
-@Database(entities = arrayOf(Quran::class), views = arrayOf(Surah::class, Jozz::class, Page::class, AyahTerakhirFinder::class), version = 12)
+@Database(entities = arrayOf(Quran::class), views = arrayOf(Surah::class, Jozz::class, Page::class, AyahTerakhirFinder::class), version = 1)
 abstract class QuranDatabase : RoomDatabase(){
     abstract fun quranDao(): QuranDao
 
@@ -27,6 +27,7 @@ abstract class QuranDatabase : RoomDatabase(){
                 .createFromInputStream {
                     context.resources.openRawResource(R.raw.quran)
                 }
+                .fallbackToDestructiveMigration()
                 .build()
         }
     }

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,9 +29,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:src="@mipmap/ic_launcher"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:src="@drawable/logo_mini_myqoran"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
                     <LinearLayout
                         android:layout_gravity="center"
                         android:orientation="vertical"
@@ -42,13 +42,15 @@
                             android:textSize="20sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
-                            android:text="Qoranku"
+                            android:text="MyQor'an"
+                            android:fontFamily="@font/lato_regular"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <TextView
                             android:textColor="@color/material_on_surface_emphasis_medium"
                             android:layout_marginStart="10dp"
                             android:textSize="18sp"
+                            android:fontFamily="@font/nunito_regular"
                             android:layout_marginTop="2dp"
                             android:layout_width="match_parent"
                             android:text="Raka M.A"
@@ -76,19 +78,21 @@
 
                         <TextView
                             android:textSize="20sp"
+                            android:fontFamily="@font/lato_regular"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
                             android:text="Version"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <TextView
+                            android:fontFamily="@font/nunito_regular"
                             android:id="@+id/version"
                             android:textColor="@color/material_on_surface_emphasis_medium"
                             android:layout_marginStart="10dp"
                             android:textSize="18sp"
                             android:layout_marginTop="2dp"
                             android:layout_width="match_parent"
-                            android:text="0.3-beta-3"
+                            android:text="1.0-release"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -112,6 +116,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:fontFamily="@font/lato_regular"
                             android:textSize="20sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
@@ -130,10 +135,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:src="@drawable/ic_baseline_book_24"
+                        android:src="@drawable/ic_baseline_book"
                         android:layout_width="70dp"
                         android:padding="9dp"
-                        app:tint="@color/material_on_surface_emphasis_medium"
+                        app:tint="?colorControlNormal"
                         android:layout_height="70dp"/>
                     <LinearLayout
                         android:layout_gravity="center"
@@ -143,6 +148,7 @@
 
                         <TextView
                             android:textSize="20sp"
+                            android:fontFamily="@font/lato_regular"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
                             android:text="License"
@@ -184,6 +190,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:fontFamily="@font/lato_regular"
                             android:textSize="20sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
@@ -191,6 +198,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <TextView
+                            android:fontFamily="@font/nunito_regular"
                             android:textColor="@color/material_on_surface_emphasis_medium"
                             android:layout_marginStart="10dp"
                             android:textSize="18sp"
@@ -223,6 +231,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:fontFamily="@font/lato_regular"
                             android:textSize="20sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
@@ -230,6 +239,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                         <TextView
+                            android:fontFamily="@font/nunito_regular"
                             android:textColor="@color/material_on_surface_emphasis_medium"
                             android:layout_marginStart="10dp"
                             android:textSize="18sp"
@@ -277,6 +287,7 @@
 
                         <TextView
                             android:textSize="14sp"
+                            android:fontFamily="@font/lato_regular"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"
                             android:text="rakamuhammadalhafidz12312@gmail.com"
@@ -307,6 +318,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:fontFamily="@font/lato_regular"
                             android:textSize="20sp"
                             android:layout_marginStart="10dp"
                             android:textColor="@color/material_on_surface_emphasis_high_type"

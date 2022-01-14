@@ -8,7 +8,7 @@ class QuranViewModel : ViewModel() {
 
     private val positionTab : MutableLiveData<Int> = MutableLiveData()
     private val totalAyahs: MutableLiveData<List<Int>> = MutableLiveData()
-    private val nama_surat : MutableLiveData<List<String>> = MutableLiveData()
+    private var currentSurat : String = ""
 
     fun setPositionTab(position: Int){
         positionTab.value = position
@@ -25,15 +25,11 @@ class QuranViewModel : ViewModel() {
         totalAyahs.value = listTotalAyahs
     }
 
-    fun getSurahName (surahList:List<Surah>){
-        val listSurah = mutableListOf<String>()
-        surahList.forEach{
-            val nama_surah = it.surahNameEN ?: 1
-            listSurah.add(nama_surah.toString())
-        }
-        nama_surat.value = listSurah
+    fun setCurrentSurah (surah:String, ayah:Int){
+        currentSurat = "$surah:$ayah"
     }
 
-
     fun getTotalAyahList() = totalAyahs
+
+    fun getCurrentSurah() = currentSurat
 }
