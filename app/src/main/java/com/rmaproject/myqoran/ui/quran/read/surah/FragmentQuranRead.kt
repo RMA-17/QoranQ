@@ -3,6 +3,9 @@ package com.rmaproject.myqoran.ui.quran.read.surah
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -14,39 +17,34 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ShareCompat
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.*
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.lzx.starrysky.SongInfo
-import com.lzx.starrysky.StarrySky
-import com.lzx.starrysky.control.RepeatMode
+import com.google.android.material.color.MaterialColors
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import com.rmaproject.myqoran.R
 import com.rmaproject.myqoran.data.BookmarkDatabase
 import com.rmaproject.myqoran.data.QuranDatabase
 import com.rmaproject.myqoran.databinding.FragmentReadQuranBinding
 import com.rmaproject.myqoran.model.Quran
+import com.rmaproject.myqoran.services.MyPlayerService
 import com.rmaproject.myqoran.ui.bottomsheet.BottomSheetFootnotes
 import com.rmaproject.myqoran.ui.home.QuranViewModel
 import com.rmaproject.myqoran.ui.search.by.ayah.SearchFragmentRead
 import com.rmaproject.myqoran.ui.settings.LastReadPreferences
 import com.rmaproject.myqoran.ui.settings.QariPreferences
 import kotlinx.coroutines.launch
-
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import androidx.core.view.isVisible
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.*
-import com.google.android.material.color.MaterialColors
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.BaseTransientBottomBar
-import com.google.android.material.snackbar.Snackbar
-import com.lzx.starrysky.manager.PlaybackStage
+import snow.player.PlayerClient
+import snow.player.audio.MusicItem
+import snow.player.playlist.Playlist
 
 class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
 
@@ -63,6 +61,9 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
     }
     private val nextButton by lazy {
         binding.bottomAppbar.menu.findItem(R.id.nextAyahButton)
+    }
+    private val playerClient by lazy {
+        PlayerClient.newInstance(requireContext(), MyPlayerService::class.java)
     }
 
     private val viewModel: QuranViewModel by activityViewModels()
@@ -129,60 +130,74 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
         binding.bottomAppbar.visibility = View.GONE
         binding.fabClose.visibility = View.GONE
 
-        viewModel.getTotalAyahList().observe(viewLifecycleOwner, { totalAyah ->
-            viewModel.getPositionTab().observe(viewLifecycleOwner, { tabPos ->
+        viewModel.getTotalAyahList().observe(viewLifecycleOwner) { totalAyah ->
+            viewModel.getPositionTab().observe(viewLifecycleOwner) { tabPos ->
                 Log.d("FALSEORTRUE", isClickedFromHome.toString())
                 Log.d("LASTREADCHECK", lastReadPos.toString())
                 when (isClickedFromSearch) {
                     true -> {
                         quranDao.readQuranBySurah(surahNumberBookmark).asLiveData()
-                            .observe(viewLifecycleOwner, { listQuran ->
+                            .observe(viewLifecycleOwner) { listQuran ->
                                 setQuranAdapter(listQuran, totalAyah, viewModel)
-                            })
+                            }
                         toolbarTitle = "Surah $surahName"
                     }
                     false -> {
                         when (isclickedFromBookmark) {
                             true -> {
                                 quranDao.readQuranBySurah(surahNumberBookmark).asLiveData()
-                                    .observe(viewLifecycleOwner, { listQuran ->
+                                    .observe(viewLifecycleOwner) { listQuran ->
                                         setQuranAdapter(listQuran, totalAyah, viewModel)
-                                    })
+                                    }
                                 toolbarTitle = surahNameBookmark
                                 if (lastReadPosBookmark <= 23) {
-                                    Handler().postDelayed({
-                                        binding.recyclerViewRead.smoothScrollToPosition(
-                                            lastReadPosBookmark)
-                                    },
-                                        200)
+                                    Handler().postDelayed(
+                                        {
+                                            binding.recyclerViewRead.smoothScrollToPosition(
+                                                lastReadPosBookmark
+                                            )
+                                        },
+                                        200
+                                    )
                                 } else {
-                                    Handler().postDelayed(Runnable {
-                                        binding.recyclerViewRead.scrollToPosition(lastReadPosBookmark)
-                                    },
-                                        200)
+                                    Handler().postDelayed(
+                                        Runnable {
+                                            binding.recyclerViewRead.scrollToPosition(
+                                                lastReadPosBookmark
+                                            )
+                                        },
+                                        200
+                                    )
                                 }
                             }
                             false -> {
                                 when (isClickedFromHome) {
                                     true -> {
                                         quranDao.readQuranBySurah(lastReadSurahNumber).asLiveData()
-                                            .observe(viewLifecycleOwner, { listQuran ->
+                                            .observe(viewLifecycleOwner) { listQuran ->
                                                 setQuranAdapter(listQuran, totalAyah, viewModel)
-                                            })
+                                            }
                                         toolbarTitle = surahNameLastRead
                                         binding.recyclerViewRead.layoutManager =
                                             LinearLayoutManager(requireContext())
                                         if (lastReadPos <= 23) {
-                                            Handler().postDelayed( {
-                                                binding.recyclerViewRead.smoothScrollToPosition(
-                                                    lastReadPos)
-                                            },
-                                                200)
+                                            Handler().postDelayed(
+                                                {
+                                                    binding.recyclerViewRead.smoothScrollToPosition(
+                                                        lastReadPos
+                                                    )
+                                                },
+                                                200
+                                            )
                                         } else {
-                                            Handler().postDelayed( {
-                                                binding.recyclerViewRead.scrollToPosition(lastReadPos)
-                                            },
-                                                200)
+                                            Handler().postDelayed(
+                                                {
+                                                    binding.recyclerViewRead.scrollToPosition(
+                                                        lastReadPos
+                                                    )
+                                                },
+                                                200
+                                            )
                                         }
                                     }
                                     false -> {
@@ -190,26 +205,39 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                                             TAB_SURAH -> {
                                                 Log.d("SURAHNUMBER", surahNumber.toString())
                                                 quranDao.readQuranBySurah(surahNumber).asLiveData()
-                                                    .observe(viewLifecycleOwner,
-                                                         { listQuran ->
-                                                            setQuranAdapter(listQuran, totalAyah, viewModel)
-                                                        })
+                                                    .observe(
+                                                        viewLifecycleOwner
+                                                    ) { listQuran ->
+                                                        setQuranAdapter(
+                                                            listQuran,
+                                                            totalAyah,
+                                                            viewModel
+                                                        )
+                                                    }
                                                 toolbarTitle = "Surah $surahName"
                                             }
                                             TAB_JUZ -> {
                                                 quranDao.readQuranByJozz(jozzNumber).asLiveData()
-                                                    .observe(viewLifecycleOwner,
-                                                         { listQuran ->
-                                                            setQuranAdapter(listQuran, totalAyah, viewModel)
-                                                        })
+                                                    .observe(viewLifecycleOwner
+                                                    ) { listQuran ->
+                                                        setQuranAdapter(
+                                                            listQuran,
+                                                            totalAyah,
+                                                            viewModel
+                                                        )
+                                                    }
                                                 toolbarTitle = "Juz $jozzNumber"
                                             }
                                             TAB_PAGE -> {
                                                 quranDao.readQUranByPage(pageNumber).asLiveData()
-                                                    .observe(viewLifecycleOwner,
-                                                         { listQuran ->
-                                                            setQuranAdapter(listQuran, totalAyah, viewModel)
-                                                        })
+                                                    .observe(viewLifecycleOwner
+                                                    ) { listQuran ->
+                                                        setQuranAdapter(
+                                                            listQuran,
+                                                            totalAyah,
+                                                            viewModel
+                                                        )
+                                                    }
                                                 toolbarTitle = "Page $pageNumber"
                                             }
                                         }
@@ -224,43 +252,8 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                 val toolbarActivity = requireActivity().findViewById<Toolbar>(R.id.toolbar)
                 toolbarActivity.title = toolbarTitle
 
-            })
-        })
-
-        StarrySky.with().playbackState().observe(viewLifecycleOwner, { playBackState ->
-            when (playBackState.stage) {
-                PlaybackStage.ERROR -> {
-                    MaterialAlertDialogBuilder(requireContext())
-                        .setTitle("Terjadi Kesalahan")
-                        .setMessage("Message: ${playBackState.errorMsg}")
-                        .setPositiveButton("Ok") { dialog, _ ->
-                            dialog.dismiss()
-                            if (playBackState.errorMsg == "ExoPlayer error Unable to connect") {
-                                StarrySky.with().stopMusic()
-                                Toast.makeText(requireContext(), "Periksa Kembali internet anda", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                        .show()
-                }
-                PlaybackStage.PLAYING -> {
-                    menuPlay.title = "Pause Ayah"
-                    menuPlay.setIcon(R.drawable.ic_baseline_pause_24)
-                }
-                PlaybackStage.SWITCH -> { //Bakal kepanggil saat switch audio
-                    playBackState.songInfo?.let {
-                        binding.recyclerViewRead.smoothScrollToPosition(it.objectValue as Int + 1)
-                    }
-                }
-                PlaybackStage.BUFFERING -> {
-                    menuPlay.setIcon(R.drawable.ic_outline_play_arrow_24)
-                    menuPlay.title = "Play Ayah"
-                }
-                PlaybackStage.PAUSE, PlaybackStage.IDLE -> {
-                    menuPlay.setIcon(R.drawable.ic_outline_play_arrow_24)
-                    menuPlay.title = "Play Ayah"
-                }
             }
-        })
+        }
 
     }
 
@@ -335,22 +328,22 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
 
         adapter.playMurottalListener = { quran, totalAyat ->
             if (isOnline(requireContext())) {
-                StarrySky.with().stopMusic()
+//                StarrySky.with().stopMusic()
                 //Value Default
                 val numberofSurah = String.format("%03d", quran.surahNumber)
                 var ayahNumber = quran.AyahNumber
                 var ayahNumberUrlReady = String.format("%03d", ayahNumber)
                 var url = "https://archive.org/download/quran-every-ayah/$urlNamaQari.zip/$numberofSurah$ayahNumberUrlReady.mp3"
                 var songName = "${quran.SurahName_en} : $ayahNumber"
-                var repeatMode = RepeatMode.REPEAT_MODE_NONE
+//                var repeatMode = RepeatMode.REPEAT_MODE_NONE
                 var isRepeated = false
 
-                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
+//                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
                 binding.bottomAppbar.isVisible = true
                 binding.fabClose.isVisible = true
 
                 binding.fabClose.setOnClickListener {
-                    StarrySky.with().stopMusic()
+//                    StarrySky.with().stopMusic()
                     binding.bottomAppbar.isVisible = false
                     binding.fabClose.isVisible = false
                 }
@@ -362,13 +355,13 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                 binding.bottomAppbar.setOnMenuItemClickListener { menuitem ->
                     when (menuitem.itemId) {
                         R.id.stopAyahButton -> {
-                            StarrySky.with().stopMusic()
+//                            StarrySky.with().stopMusic()
                         }
                         R.id.nextAyahButton -> {
                             ayahNumber = ayahNumber!! + 1
-                            if (StarrySky.with().isPlaying()) {
-                                StarrySky.with().stopMusic()
-                            }
+//                            if (StarrySky.with().isPlaying()) {
+//                                StarrySky.with().stopMusic()
+//                            }
                             if (ayahNumber!! >= totalAyat) {
                                 Toast.makeText(requireContext(), "Tidak ada ayat ${totalAyat+1}", Toast.LENGTH_SHORT).show()
                                 ayahNumber = totalAyat-1
@@ -376,14 +369,14 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                                 ayahNumberUrlReady = String.format("%03d", ayahNumber)
                                 songName = "${quran.SurahName_en} : $ayahNumber"
                                 url = "https://archive.org/download/quran-every-ayah/$urlNamaQari.zip/$numberofSurah$ayahNumberUrlReady.mp3"
-                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
+//                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
                             }
                         }
                         R.id.previousAyahBtn -> {
                             ayahNumber = ayahNumber!! - 1
-                            if (StarrySky.with().isPlaying()) {
-                                StarrySky.with().stopMusic()
-                            }
+//                            if (StarrySky.with().isPlaying()) {
+//                                StarrySky.with().stopMusic()
+//                            }
                             if (ayahNumber!! <= 0) {
                                 Toast.makeText(requireContext(), "Tidak ada ayat 0", Toast.LENGTH_SHORT).show()
                                 ayahNumber = ayahNumber!! + 1
@@ -391,31 +384,31 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                                 ayahNumberUrlReady = String.format("%03d", ayahNumber)
                                 songName = "${quran.SurahName_en} : $ayahNumber"
                                 url = "https://archive.org/download/quran-every-ayah/$urlNamaQari.zip/$numberofSurah$ayahNumberUrlReady.mp3"
-                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
+//                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
                             }
                         }
 
                         R.id.pauseplayAyahButton -> {
-                            if (menuPlay.title == "Pause Ayah") {
-                                StarrySky.with().pauseMusic()
-                            } else if (menuPlay.title == "Play Ayah") {
-                                StarrySky.with().restoreMusic()
-                            }
+//                            if (menuPlay.title == "Pause Ayah") {
+//                                StarrySky.with().pauseMusic()
+//                            } else if (menuPlay.title == "Play Ayah") {
+//                                StarrySky.with().restoreMusic()
+//                            }
                         }
 
                         R.id.repeatAyahButton -> {
                             if (menuRepeat.title == "Repeat") {
                                 isRepeated = true
-                                repeatMode = RepeatMode.REPEAT_MODE_ONE
+//                                repeatMode = RepeatMode.REPEAT_MODE_ONE
                                 menuRepeat.title = "RepeatOne"
                                 menuRepeat.setIcon(R.drawable.ic_outline_repeat_one_24)
-                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
+//                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
                             } else if (menuRepeat.title == "RepeatOne") {
                                 isRepeated = false
-                                repeatMode = RepeatMode.REPEAT_MODE_NONE
+//                                repeatMode = RepeatMode.REPEAT_MODE_NONE
                                 menuRepeat.title = "Repeat"
                                 menuRepeat.setIcon(R.drawable.ic_outline_repeat_24)
-                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
+//                                playMurrotal(artist, quran.surahNumber, ayahNumberUrlReady, url, songName, repeatMode, isRepeated)
                             }
                         }
                     }
@@ -426,11 +419,11 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                         if (dy > 0) {
                             binding.fabClose.hide()
                         } else if (dy < 0) {
-                            if (StarrySky.with().isIdle()) {
-                                binding.fabClose.visibility = View.GONE
-                            } else {
-                                binding.fabClose.show()
-                            }
+//                            if (StarrySky.with().isIdle()) {
+//                                binding.fabClose.visibility = View.GONE
+//                            } else {
+//                                binding.fabClose.show()
+//                            }
                         }
                     }
                 })
@@ -449,31 +442,31 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
 
         adapter.playAllAyahClickListener = { quran, totalAyat ->
             if (isOnline(requireContext())) {
-                val audioList = mutableListOf<SongInfo>()
+//                val audioList = mutableListOf<SongInfo>()
                 for (i in 1..totalAyat) {
-                    val audio = SongInfo()
+//                    val audio = SongInfo()
                     val numberofSurah = String.format("%03d", quran.surahNumber)
                     val ayatNumber = String.format("%03d", i)
                     val url =
                         "https://archive.org/download/quran-every-ayah/$urlNamaQari.zip/$numberofSurah$ayatNumber.mp3"
-                    audio.artist = artist
-                    audio.songId = "$numberofSurah$ayatNumber"
-                    audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
-                    audio.objectValue = i -1
-                    audio.songUrl = url
-                    audio.songName = quran.SurahName_en.toString()
-                    audioList.add(audio)
+//                    audio.artist = artist
+//                    audio.songId = "$numberofSurah$ayatNumber"
+//                    audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
+//                    audio.objectValue = i -1
+//                    audio.songUrl = url
+//                    audio.songName = quran.SurahName_en.toString()
+//                    audioList.add(audio)
                     Log.d("AYAT", totalAyat.toString())
                 }
                 val startAudio = quran.AyahNumber!! - 1
-                StarrySky.with().setRepeatMode(RepeatMode.REPEAT_MODE_NONE, isLoop = false)
-                StarrySky.with().playMusic(audioList, startAudio)
+//                StarrySky.with().setRepeatMode(RepeatMode.REPEAT_MODE_NONE, isLoop = false)
+//                StarrySky.with().playMusic(audioList, startAudio)
                 Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
                 binding.bottomAppbar.isVisible = true
                 binding.fabClose.isVisible = true
 
                 binding.fabClose.setOnClickListener {
-                    StarrySky.with().stopMusic()
+//                    StarrySky.with().stopMusic()
                     binding.bottomAppbar.isVisible = false
                     binding.fabClose.isVisible = false
                 }
@@ -485,13 +478,13 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
 
                     when (menuitem.itemId) {
                         R.id.stopAyahButton -> {
-                            StarrySky.with().stopMusic()
+//                            StarrySky.with().stopMusic()
                         }
                         R.id.pauseplayAyahButton -> {
                             if (menuPlay.title == "Pause Ayah") {
-                                StarrySky.with().pauseMusic()
+//                                StarrySky.with().pauseMusic()
                             } else if (menuPlay.title == "Play Ayah") {
-                                StarrySky.with().restoreMusic()
+//                                StarrySky.with().restoreMusic()
                             }
                         }
                     }
@@ -502,11 +495,11 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
                         if (dy > 0) {
                             binding.fabClose.hide()
                         } else if (dy < 0) {
-                            if (StarrySky.with().isIdle()) {
-                                binding.fabClose.visibility = View.GONE
-                            } else {
-                                binding.fabClose.show()
-                            }
+//                            if (StarrySky.with().isIdle()) {
+//                                binding.fabClose.visibility = View.GONE
+//                            } else {
+//                                binding.fabClose.show()
+//                            }
                         }
                     }
                 })
@@ -533,14 +526,23 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
     }
 
     private fun isOnline(context: Context): Boolean {
-        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
-        val n = cm.activeNetwork
-        if (n != null) {
-            val nc = cm.getNetworkCapabilities(n)
-            //It will check for both wifi and cellular network
-            return nc!!.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || nc.hasTransport(
-                NetworkCapabilities.TRANSPORT_WIFI)
+        // For 29 api or above
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork) ?: return false
+            return when {
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ->    true
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ->   true
+                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ->   true
+                else ->     false
+            }
+        }
+        // For below 29 api
+        else {
+            if (connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!.isConnectedOrConnecting) {
+                return true
+            }
         }
         return false
     }
@@ -548,26 +550,47 @@ class FragmentQuranRead: Fragment(R.layout.fragment_read_quran) {
     private fun playMurrotal(artist:String, surahNumber:Int?, FormattedayahNumber:String, url:String,
                              songName:String, repeatMode: Int, isRepeated:Boolean) {
 
-        val audio = SongInfo()
-        audio.artist = artist
-        audio.songId = "$surahNumber$FormattedayahNumber"
-        audio.songUrl = url
-        audio.songName = songName
-        audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
-        Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
+//        val audio = SongInfo()
+//        audio.artist = artist
+//        audio.songId = "$surahNumber$FormattedayahNumber"
+//        audio.songUrl = url
+//        audio.songName = songName
+//        audio.songCover = "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/10/04/676590316.jpg"
+//        Toast.makeText(requireContext(), "Murottal Played", Toast.LENGTH_SHORT).show()
+//
+//        if (!isRepeated) {
+//            StarrySky.with().setRepeatMode(repeatMode, isLoop = false)
+//            StarrySky.with().playMusicByInfo(audio)
+//        } else {
+//            StarrySky.with().setRepeatMode(repeatMode, isLoop = true)
+//            StarrySky.with().playMusicByInfo(audio)
+//        }
+//
+//        if (StarrySky.with().isPaused()) {
+//            StarrySky.with().restoreMusic()
+//        }
 
-        if (!isRepeated) {
-            StarrySky.with().setRepeatMode(repeatMode, isLoop = false)
-            StarrySky.with().playMusicByInfo(audio)
-        } else {
-            StarrySky.with().setRepeatMode(repeatMode, isLoop = true)
-            StarrySky.with().playMusicByInfo(audio)
+    }
+
+    private fun createPlayListAll(quran:Quran, totalAyah: Int, namaQari:String) : Playlist {
+        val playList = mutableListOf<MusicItem>()
+
+        for (i in 1..totalAyah) {
+            val formattedAyahNumber = String.format("%03d", i)
+            val formattedSurahNumber = String.format("%03d", quran.surahNumber)
+            val musicItem = MusicItem.Builder()
+                .setMusicId("$i")
+                .autoDuration()
+                .setTitle("${quran.SurahName_en}: $i")
+                .setArtist(namaQari)
+                .setDuration(i -1)
+                .build()
+            playList.add(musicItem)
         }
 
-        if (StarrySky.with().isPaused()) {
-            StarrySky.with().restoreMusic()
-        }
-
+        return Playlist.Builder()
+            .appendAll()
+            .build()
     }
 
 
